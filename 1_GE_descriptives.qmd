@@ -1,0 +1,695 @@
+---
+title: "Obtaining a sample of Tweede Kamer speeches that reference the 'Gouden Eeuw'"
+author: "MS / SC"
+date: "2026-02"
+output: html_document
+---
+
+In this script, we
+In a first step, we'll load the required packages. 
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(lubridate)
+library(stringr)
+library(data.table)
+library(irr)
+library(ellmer)
+library(quanteda)
+library(quanteda.textstats)
+library(text2vec)
+library(word2vec)
+library(data.table)
+library(Matrix)
+```
+
+
+We'll now read in the data which is stored in a subfolder called Data, and is called df_speeches_1945-2012-non_semanticized.csv and df_speeches_2013-2025-non_semanticized.csv. We'll use data.table() to speed up the reading process.
+
+```{r}
+
+df1 <- fread("Data/df_speeches_1945-2012-non_semanticized.csv", encoding = "UTF-8")
+df2 <- fread("Data/df_speeches_2013-2025-non_semanticized.csv", encoding = "UTF-8")
+
+# Combine the two dataframes
+df_speeches <- rbind(df1, df2)
+
+
+df_speeches <- subset(df_speeches, role != "chair")
+
+
+rm(df1, df2)
+
+```
+
+Let's first check how many unique speakers we have in the dataset. Speakers are stored in the variable speaker. Using tidyverse, we'll list all unique speakers and order them by the number of speeches given.
+
+```{r}
+
+unique_speakers <- df_speeches %>%
+  group_by(speaker) %>%
+  summarise(num_speeches = n()) %>%
+  arrange(desc(num_speeches))
+
+print(unique_speakers)
+
+
+```
+
+In a next step, we'll create some descriptive statistics about the speeches. We'll calculate the number of speeches per year, the average length of speeches per year, and plot these descriptives.
+
+```{r}
+# Convert date to Date type
+df_speeches$date <- as.Date(df_speeches$date)
+# Extract year from date
+df_speeches$year <- year(df_speeches$date)
+# Calculate number of speeches and average length per year
+descriptives <- df_speeches %>%
+  group_by(year) %>%
+  summarise(num_speeches = n(),
+            avg_length = mean(nchar(text)))
+
+# Plot number of speeches per year
+ggplot(descriptives, aes(x = year, y = num_speeches)) +
+  geom_line() +
+  theme_minimal() + 
+  labs(title = "Number of Speeches per Year",
+       x = "Year",
+       y = "Number of Speeches")
+
+#save plot
+ggsave(  filename = "Figures/Speeches_per_year.pdf",
+  plot = last_plot(),
+  width = 10,
+  height = 6,
+  dpi = 300)
+
+# Plot average length of speeches per year
+ggplot(descriptives, aes(x = year, y = avg_length)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Average Length of Speeches per Year",
+       x = "Year",
+       y = "Average Length (characters)")
+
+ggsave( filename = "Figures/Average_length_per_speech.pdf",
+  plot = last_plot(),
+  width = 10,
+  height = 6,
+  dpi = 300)
+
+```
+
+We'll create a corpus object of df_speeches$text using the quanteda package.
+
+```{r}
+
+corpus_speeches <- corpus(df_speeches$text)
+
+```
+
+In a next step, we'll tokenise this corpus
+
+```{r}
+#| label: "tokenize_corpus"
+#| echo: true
+#| message: false
+#| warning: false
+
+tokens_speech <- corpus_speeches %>%
+  tokens(what = "word",
+         remove_punct = TRUE, 
+         padding = TRUE,
+         remove_symbols = TRUE, 
+         remove_numbers = FALSE,
+         remove_url = TRUE,
+         remove_separators = TRUE,
+         split_hyphens = FALSE) %>%
+  tokens_remove(stopwords("nl")) %>%
+  tokens_tolower() 
+
+tokens_speech <- tokens_trim(tokens_speech, 
+                             min_termfreq = 25)
+  
+```
+
+We'll also append collocations.
+
+
+```{r}
+#| label: "collocations"
+#| echo: true
+#| message: false
+#| warning: false
+
+
+# 1) Choose chunk size (tune this)
+
+options(future.globals.maxSize = 4 * 1024^3)  # 4 GiB (adjust if needed)
+
+
+workers <- 8L          # number of parallel workers (adjust based on your CPU)
+chunk_size <- 50000L   # number of documents per chunk (adjust based on memory and speed)
+
+# Forking on macOS: shares memory (copy-on-write)
+plan(multicore, workers = workers)
+
+# Build doc index chunks
+n_docs <- ndoc(tokens_speech)
+chunks <- split(seq_len(n_docs), ceiling(seq_len(n_docs) / chunk_size))
+
+# Parallel collocations per chunk
+colloc_list <- future_lapply(chunks, function(ix) {
+  textstat_collocations(tokens_speech[ix], min_count = 10)
+})
+
+# Combine and sort (base is faster than dplyr::arrange for big frames)
+colloc_all <- bind_rows(colloc_list)
+colloc_all <- colloc_all[order(-colloc_all$count), ]
+
+head(colloc_all, 50)
+
+colloc_dedup <- colloc_all %>%
+  group_by(collocation) %>%
+  slice_max(order_by = lambda, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  arrange(desc(lambda))
+
+head(colloc_dedup, 100)
+
+```
+
+Save the created objects as an intermediary step.
+
+```{r}
+#| label: "save_tokens"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+out_dir <- "/Data/Intermediate_corpus_objects"
+dir.create(out_dir, showWarnings = FALSE)
+
+save(tokens_speech, file = "Data/Intermediate_corpus_objects/tokens_speech.Rdata")
+save(colloc_dedup, file = "Data/Intermediate_corpus_objects/colloc_dedup.Rdata")
+
+```
+
+
+If we want to add the most occurring collocations to the tokens object, we can use the `tokens_compound()` function. Before being able to use this we need to reorganise the collocations object so that it becomes a list of collocations. We can do this by filtering the collocations that occur at least 10 times, pulling the `collocation` column, and then converting it to a phrase object using the `phrase()` function. We'll manually add relevant phrases as well. 
+
+```{r}
+#| label: "tokens_compound"
+#| echo: true
+#| message: false
+#| warning: false
+
+
+load("Data/Intermediate_corpus_objects/tokens_speech.Rdata")
+
+collocations <- colloc_dedup %>%
+  filter(lambda > 10) %>%
+  pull(collocation) %>%
+  phrase()
+
+tokens_speech <- tokens_compound(tokens_speech, collocations)
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("gouden eeuw"), 
+                                 concatenator = "_")
+
+koloniaal_bigrams <- kwic(tokens_speech, pattern = "koloniaal", window = 1)
+sort(table(koloniaal_bigrams$post))
+terms_koloniaal <- as.vector(unique(koloniaal_bigrams$post))
+
+terms_koloniaal <- as.phrase(
+  lapply(terms_koloniaal, function(w) c("koloniaal", w))
+)
+
+tokens_speech <- tokens_compound(
+  tokens_speech,
+  pattern = terms_koloniaal,
+  concatenator = "_"
+)
+
+koloniale_bigrams <- kwic(tokens_speech, pattern = "koloniale", window = 1)
+sort(table(koloniale_bigrams$post))
+terms_koloniale <- as.vector(unique(koloniale_bigrams$post))
+
+terms_koloniale <- as.phrase(
+  lapply(terms_koloniale, function(w) c("koloniale", w))
+)
+
+tokens_speech <- tokens_compound(
+  tokens_speech,
+  pattern = terms_koloniale,
+  concatenator = "_"
+)
+
+compagnie_bigrams <- kwic(tokens_speech, pattern = "compagnie", window = 2)
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("oost-indische compagnie"), concatenator = "_")
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("oostindische compagnie"), concatenator = "_")
+
+
+ruyter_bigrams <- kwic(tokens_speech, pattern = "ruyter", window = 2)
+ruijter_bigrams <- kwic(tokens_speech, pattern = "ruijter", window = 2)
+
+
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("adriaanszoon ruyter"),
+                                 concatenator = "_")
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("michiel ruijter"),
+                                 concatenator = "_")
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("admiraal ruijter"),
+                                 concatenator = "_")
+
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("koopmans geest"), 
+                                 concatenator = "")
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("maritieme natie"),
+                                 concatenator = "")
+
+tokens_speech <- tokens_compound(tokens_speech, pattern = phrase("synode dordrecht"),
+                                 concatenator = "_")
+
+
+overzeese_bigrams <- kwic(tokens_speech, pattern = "overzeese", window = 1)
+sort(table(overzeese_bigrams$post))
+terms_overzeese <- as.vector(unique(overzeese_bigrams$post))
+
+terms_overzeese <- as.phrase(
+  lapply(terms_overzeese, function(w) c("overzeese", w))
+)
+
+tokens_speech <- tokens_compound(
+  tokens_speech,
+  pattern = terms_overzeese,
+  concatenator = "_"
+)
+
+#  tokens_compound(phrase("kolonialisme"), concatenator = "_")
+
+sum(as.character(tokens_speech) == "gouden_eeuw", na.rm = TRUE)
+sum(as.character(tokens_speech) == "koloniaal_rijk", na.rm = TRUE)
+sum(as.character(tokens_speech) == "overzeese_gebieden", na.rm = TRUE)
+sum(as.character(tokens_speech) == "koopmansgeest", na.rm = TRUE)
+
+```
+
+
+
+```{r}
+#| label: "gouden_eeuw_bigrams"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: false
+#| results: "asis"
+
+gouden_eeuw_terms <- c("17e eeuw", "zeventiende eeuw", "zeventiende eeuwse", "17de eeuw", "17de eeuws", "17de eeuwse", "zeven verenigde", "zeven vereenigde", "de republiek", "johannes vermeer", "frans hals", "jan steen", "hollandse schilderkunst", "amsterdamse grachtengordel", "johan witt","tachtigjarige oorlog", "vrede münster", "unie utrecht", "amsterdamse wisselbank", "amsterdamse beurs",  "anglo-nederlandse oorlogen", "engelse oorlogen",  "christiaan huygens","wetenschappelijke bloei",  "intellectuele bloei", "vrede westfalen")
+
+
+republiek_bigrams <- kwic(tokens_speech, pattern = "republiek", window = 1)
+sort(table(republiek_bigrams$post))
+
+münster_bigrams <- kwic(tokens_speech, pattern = "münster", window = 2)
+zeven_bigrams <- kwic(tokens_speech, pattern = "zeven", window = 1)
+sort(table(zeven_bigrams$post))
+
+zeventiende_bigrams <- kwic(tokens_speech, pattern = "zeventiende", window = 1)
+sort(table(zeventiende_bigrams$post))
+
+zeventiende_bigrams_numeric <- kwic(tokens_speech, pattern = "17de", window = 1)
+sort(table(zeventiende_bigrams_numeric$post))
+
+gouden_eeuw_phrases <- phrase(gouden_eeuw_terms)
+
+tokens_speech <- tokens_compound(
+  tokens_speech,
+  pattern = gouden_eeuw_phrases,
+  concatenator = "_"
+)
+
+
+```
+
+We'll remove empty tokens from the tokens object.
+
+```{r}
+#| label: "remove_empty_tokens"
+#| echo: true
+#| message: false
+#| warning: false
+
+
+tokens_speech <- tokens_remove(tokens_speech, "")
+
+```
+In a next step, we'll create a dfm from the tokens object.
+
+```{r}
+#| label: "create_dfm"
+#| echo: true
+#| message: false
+#| warning: false
+
+dfm_speech <- dfm(tokens_speech)
+
+topfeatures(dfm_speech, 50)
+
+```
+
+Finally, we'll save the dfm object for later use.
+
+```{r}
+#| label: "save_dfm"
+#| echo: true
+#| message: false
+#| warning: false
+
+save(dfm_speech, file = "Data/Intermediate_corpus_objects/dfm_speech.Rdata")
+
+```
+
+In a next step, we'll take a random sample from the tokens_speech object of 100,000 speeches. We'll then use this sample to create an embeddings-based dictionary using the text2vec package.
+
+```{r}
+#| label: "sample_tokens"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+set.seed(1234)
+
+train_list <- as.list(tokens_speech)
+
+```
+
+In a next step, we'll train a GloVe model on the sampled tokens.
+
+```{r}
+#| label: "train_glove"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+model <- word2vec(
+  x = train_list,
+  type = "skip-gram",
+  dim = 200,
+  window = 8,
+  iter = 10,
+  lr = 0.025,
+  negative = 10,
+  min_count = 5,
+  threads = parallel::detectCores()
+)
+
+```
+
+Now we'll check the nearest neighbors for an extended seed dictionary.
+
+```{r}
+#| label: "nearest_neighbors_extended"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+
+seeds_gouden_eeuw_alternative <- c("gouden_eeuw", "17e_eeuw", "zeventiende_eeuw", "zeventiende_eeuwse", "17de_eeuw", "17de_eeuws", "17de_eeuwse", "zeventiende-eeuwse", "oost-indische_compagnie", "oostindische_compagnie", "synode_dordrecht", "statenbijbel", "adriaanszoon_ruyter", "admiraal_ruijter", "statenbijbel", "17de-eeuwse", "voc", "admiraal_ruyter", "michiel_ruyter", "dordtsche")
+
+
+M <- as.matrix(model)   # rows = words, cols = dimensions
+seeds_gouden_eeuw %in% rownames(M)
+sum(seeds_gouden_eeuw %in% rownames(M))
+
+seeds_gouden_eeuw_alternative %in% rownames(M)
+sum(seeds_gouden_eeuw_alternative %in% rownames(M))
+
+nearest_to_seed_average <- function(model, seeds, top_n = 100, exclude_seeds = TRUE) {
+  M <- as.matrix(model)          # rows: terms, cols: dimensions
+  seeds <- unique(as.character(seeds))
+  seeds_in <- seeds[seeds %in% rownames(M)]
+
+  if (length(seeds_in) == 0) {
+    stop("None of the seed terms are in the model vocabulary.")
+  }
+
+  # centroid (average embedding)
+  centroid <- colMeans(M[seeds_in, , drop = FALSE])
+
+  # cosine similarity of every word to centroid
+  centroid_norm <- sqrt(sum(centroid^2))
+  M_norm <- sqrt(rowSums(M^2))
+  sims <- as.numeric((M %*% centroid) / (M_norm * centroid_norm))
+  names(sims) <- rownames(M)
+
+  # rank neighbours
+  sims_sorted <- sort(sims, decreasing = TRUE)
+
+  if (exclude_seeds) {
+    sims_sorted <- sims_sorted[!names(sims_sorted) %in% seeds_in]
+  }
+
+  top <- head(sims_sorted, top_n)
+
+  tibble(
+    term = names(top),
+    similarity = as.numeric(top),
+    seed_set = paste(seeds_in, collapse = ", ")
+  )
+}
+
+
+nn_avg <- nearest_to_seed_average(model, seeds_gouden_eeuw, top_n = 500)
+nn_avg
+
+nn_avg$seed_set[1]
+
+
+nn_avg_alt <- nearest_to_seed_average(model, 
+                                      seeds_gouden_eeuw_alternative, 
+                                      top_n = 500)
+nn_avg_alt
+
+nn_avg_alt$seed_set[1]
+```
+
+In a next step, we'll save the nn_tbl as a csv file for later use.
+
+```{r}
+#| label: "save_nn"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+write_csv(nn_avg_alt, "Data/Intermediate_corpus_objects/nn_gouden_eeuw.csv")
+
+nn_avg_alt <- read_csv("Data/Intermediate_corpus_objects/nn_gouden_eeuw.csv")
+nn_avg_alt <- subset(nn_avg_alt, relevance == 1)
+
+```
+
+We then proceed with subsetting the df_speeches object based on the nns in nn_avg_alt. In a first step, we'll turn the terms in nn_avg into a dictionary object
+
+```{r}
+#| label: "create_dictionary"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+nn_terms <- c(nn_avg_alt$term, seeds_gouden_eeuw_alternative)
+dict_gouden_eeuw <- dictionary(list(gouden_eeuw = seeds_gouden_eeuw_alternative))
+
+
+```
+
+In a next step, we'll count the number of unique values in nn_terms in each row of the tokens_speech object using str_count()
+
+```{r}
+#| label: "count_unique_terms"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+#| results: "asis"
+
+
+df_speeches$gouden_eeuw_unique_raw <- sapply(
+  tokens_speech,
+  function(x) length(unique(intersect(x, seeds_gouden_eeuw_alternative)))
+)
+
+```
+
+In a next step, we'll apply this dictionary to the dfm_speech object.
+
+```{r}
+#| label: "apply_dictionary"
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+load("Data/Intermediate_corpus_objects/dfm_speech.Rdata")
+
+dfm_gouden_eeuw <- dfm_lookup(dfm_speech, dictionary = dict_gouden_eeuw)
+
+
+```
+
+In a next step we'll average the number of references the gouden eeuw We'll save this as gouden_eeuw_raw. We'll also divide this by the total number of tokens in each speech, multiplied by 1000 to get a proportion per 1000 tokens. We'll save this as gouden_eeuw
+
+
+```{r}
+#| label: "ec_variable"
+#| echo: true
+#| message: false
+#| warning: false
+
+df_speeches$gouden_eeuw_raw <- as.numeric(dfm_gouden_eeuw[, "gouden_eeuw"])
+df_speeches$gouden_eeuw <-  (df_speeches$gouden_eeuw_raw / ntoken(dfm_speech)) * 1000
+df_speeches$gouden_eeuw_unique <- (df_speeches$gouden_eeuw_unique_raw / ntoken(dfm_speech)) * 1000
+df_speeches$gouden_eeuw_unique_std <- scale(df_speeches$gouden_eeuw_unique)
+```
+
+
+In a final step, we'll plot the average GE score per year from the docvars of corpus_speeches. We'll make the y-range between 0 and 30, and the x-axis will be from 1945 to 2025 with ticks every 5 years, and labels every 10 years. We'll subset for speeches that have at least 100 tokens.
+
+```{r}
+
+df_speeches_100 <- subset(df_speeches, ntoken(dfm_speech) >= 100)
+
+ge_descriptives <- data.frame(
+  year = df_speeches_100$year,
+  gouden_eeuw = df_speeches_100$gouden_eeuw,
+  gouden_eeuw_unique = df_speeches_100$gouden_eeuw_unique
+) %>%
+  filter(gouden_eeuw > 0) %>%
+  group_by(year) %>%
+  summarise(avg_ge_year = mean(gouden_eeuw, na.rm = TRUE),
+            avg_ge_unique_year = mean(gouden_eeuw_unique, na.rm = TRUE))
+
+
+ggplot(ge_descriptives, aes(x = year, y = avg_ge_year)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Gouden Eeuw Term References per Year",
+       x = "Year",
+       y = "References to Gouden Eeuw per 1000 tokens") +
+  ylim(0, 15) +
+  scale_x_continuous(breaks = seq(1945, 2025, by = 5))
+
+
+ggsave( filename = "Figures/Average_gouden_eeuw_term_density_per_year.pdf",
+  plot = last_plot(),
+  width = 10,
+  height = 6,
+  dpi = 300)
+
+
+ggplot(ge_descriptives, aes(x = year, y = avg_ge_unique_year)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Gouden Eeuw Term References per Year",
+       x = "Year",
+       y = "References to Gouden Eeuw per 1000 tokens") +
+  ylim(0, 10) +
+  scale_x_continuous(breaks = seq(1945, 2025, by = 5))
+
+
+ge_yearly <- df_speeches %>%
+  group_by(year) %>%
+  summarise(
+    avg_density_nonzero = mean(gouden_eeuw[gouden_eeuw > 0], na.rm = TRUE),
+    share_mentions = mean(gouden_eeuw > 0, na.rm = TRUE)
+  )
+
+#We'll now plot ge_yearly
+
+ggplot(ge_yearly, aes(x = year, y = avg_density_nonzero)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Average Gouden Eeuw Term Density (Non-zero) per Year",
+       x = "Year",
+       y = "Average Gouden Eeuw Term Density (Non-zero)") +
+  ylim(0, 50) +
+  scale_x_continuous(breaks = seq(1945, 2025, by = 5))
+
+#we'll do the same for share mentions
+
+ggplot(ge_yearly, aes(x = year, y = share_mentions)) +
+  geom_line() +
+  theme_minimal() +
+  labs(title = "Share of Speeches Mentioning Gouden Eeuw per Year",
+       x = "Year",
+       y = "Share of Speeches Mentioning Gouden Eeuw") +
+  ylim(0, 1) +
+  scale_x_continuous(breaks = seq(1945, 2025, by = 5))
+
+
+```
+
+
+
+
+In a next step, we'll create a corpus for which the Gouden term density is larger than 20, using corpus_subset
+
+```{r}
+
+#df_speeches_ge_high <- subset(df_speeches, df_speeches$gouden_eeuw_unique >= 5)
+
+
+df_speeches_ge_high <- df_speeches %>%
+  filter(gouden_eeuw_raw >= 1) 
+
+
+cutoff <- quantile(df_speeches_ge_high$gouden_eeuw_unique, 0.95, na.rm = TRUE)
+
+df_speeches_ge_high <- df_speeches_ge_high %>%
+  filter(gouden_eeuw_unique >= cutoff)
+
+```
+
+We'll save this corpus as an .Rdata file for later use.
+
+```{r}
+
+write.csv(df_speeches_ge_high, file = "Data/df_ge_high.csv")
+
+
+```
+
+
+In a next step, we're going to sample 10% of the speeches in df_speeches_ge_high for qualitative coding. We'll first create a variable decade that correspondes to each decade in time, so that we can stratify the sample by decade.
+
+```{r}
+
+df_speeches_ge_high$decade <- floor(df_speeches_ge_high$year / 10) * 10
+
+```
+
+We're making sure to stratify the sample by decade. And we want to make sure that we have speeches from at least the major parties in the sample, so we'll also stratify by party_ref.
+
+
+```{r}
+set.seed(1234)
+df_speeches_ge_high_sample <- df_speeches_ge_high %>%
+  group_by(decade) %>%
+  sample_frac(0.10)
+  
+#we'll sort the sample by decare
+
+df_speeches_ge_high_sample <- df_speeches_ge_high_sample %>%
+  arrange(decade)
+  
+write.csv(df_speeches_ge_high_sample, file = "Data/df_ge_high_sample.csv")
+
+```

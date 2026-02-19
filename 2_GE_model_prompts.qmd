@@ -1,0 +1,135 @@
+---
+title: "GE Model Prompts"
+author: "MS"
+date: "2026-01"
+output: html_document
+---
+
+In a first step, we'll load the required packages. 
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(lubridate)
+library(stringr)
+library(data.table)
+library(irr)
+library(ellmer)
+library(quanteda)
+library(quanteda.textstats)
+library(text2vec)
+library(word2vec)
+library(data.table)
+library(Matrix)
+```
+
+In a first step, we'll read in the dataset containing the speeches from the Dutch Tweede Kamer stored in "Data/df_ge_high_sample.csv"
+
+
+```{r}
+
+df_speeches <- readr::read_csv("Data/df_ge_high_sample.csv")
+
+```
+
+We'll now read in a system prompt which we will use to annotate the speeches. The prompt is stored in the file "prompts/annotation_prompt.txt".
+
+```{r}
+
+system_prompt <- readr::read_file("Prompts/annotation_prompt.txt")
+
+```
+
+We'll now create a function to call the OpenAI model using the system prompt. 
+
+```{r}
+
+query_openai_vec_batched <- function(system_prompt, texts,
+                                     model = "o3",
+                                     temperature = 0,
+                                     sleep = 0,
+                                     batch_size = 50,
+                                     progress = interactive(),
+                                     max_retries = 3,
+                                     backoff_base = 1) {
+
+  texts <- as.list(texts)
+  n <- length(texts)
+
+  idx <- split(seq_len(n), ceiling(seq_len(n) / batch_size))
+
+  pb <- NULL
+  if (isTRUE(progress) && requireNamespace("progress", quietly = TRUE)) {
+    pb <- progress::progress_bar$new(
+      format = "  Batches :current/:total [:bar] :percent",
+      total = length(idx),
+      clear = FALSE,
+      width = 60
+    )
+  }
+
+  out <- rep(NA_character_, n)
+
+  for (b in seq_along(idx)) {
+    if (!is.null(pb)) pb$tick()
+    ids <- idx[[b]]
+
+    chat <- ellmer::chat_openai(
+      system_prompt = system_prompt,
+      model = model,
+      params = ellmer::params(temperature = temperature)
+    )
+
+    out[ids] <- vapply(ids, function(i) {
+      text_i <- texts[[i]]
+      if (length(text_i) == 0 || is.na(text_i)) return(NA_character_)
+      text_i <- as.character(text_i)
+      if (length(text_i) != 1) text_i <- paste(text_i, collapse = "\n")
+
+      attempt <- 0
+      while (attempt <= max_retries) {
+        attempt <- attempt + 1
+        res <- tryCatch(chat$chat(text_i), error = function(e) e)
+
+        if (!inherits(res, "error")) {
+          if (is.character(res)) return(res)
+          if (!is.null(res$text)) return(as.character(res$text))
+          return(as.character(res))
+        }
+
+        msg <- conditionMessage(res)
+        transient <- grepl("429|rate|timeout|temporar|overload|503|502|504", msg, ignore.case = TRUE)
+        if (attempt <= max_retries && transient) {
+          Sys.sleep(backoff_base * (2^(attempt - 1)))
+          next
+        }
+        return(paste0("ERROR: ", msg))
+      }
+
+      NA_character_
+    }, FUN.VALUE = character(1))
+
+    if (sleep > 0) Sys.sleep(sleep)
+  }
+
+  out
+}
+
+
+```
+
+```{r}
+raw_outputs_ge_high <- query_openai_vec_batched(
+  system_prompt = system_prompt,
+  texts = df_speeches$text,
+  model = "o3",
+  temperature = 0,
+  batch_size = 50,
+  sleep = batch_sleep,
+  progress = TRUE
+)
+```

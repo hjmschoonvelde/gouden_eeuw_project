@@ -1,0 +1,229 @@
+---
+title: "Figures and tables for Gouden Eeuw chapter"
+author: "SC / MS"
+date: "2026-01"
+output: html_document
+---
+Figure 1: flow chart of analytical procedure   
+```{r}
+library(DiagrammeR)
+library(DiagrammeRsvg)
+library(rsvg)
+library(ggplot2)
+
+
+flow <- grViz("
+digraph flow {
+  graph [layout = neato, splines = false, bgcolor = 'white']
+  node  [
+    shape = box,
+    style = 'rounded,filled',
+    fillcolor = 'white',
+    color = 'black',
+    fontname = 'Helvetica',
+    fontsize = 28.5,
+    fixedsize = true,
+    width = 4.6,
+    height = 3.2
+  ]
+  edge [color = 'black', arrowhead = 'normal']
+
+  A [label = 'Corpus of\\nTweede Kamer\\nspeeches\\n1945-2024', pos = '0,0!']
+  B [label = 'Preprocessed speeches;\\nseed dictionary\\nbased on literature\\nand open data', pos = '5.5,0!']
+  C [label = 'Retrieved speeches\\nbased on seed dictionary\\nenhanced through\\nembeddings', pos = '11,0!']
+  D [label = 'Annotation of\\nretrieved speeches\\nusing OpenAI\\no3 model', pos = '16.5,0!']
+  E [label = 'Human coded validation\\nof two test sets\\nof speeches\\n', pos = '22,0!']
+
+  X [label = 'Embeddings model\\nfor enhancing\\nseed dictionary\\n', pos = '8.25,3.9!']
+
+  A -> B [tailport = e, headport = w]
+  B -> C [tailport = e, headport = w]
+  C -> D [tailport = e, headport = w]
+  D -> E [tailport = e, headport = w]
+
+  B -> X [tailport = n, headport = w, constraint = false]
+  X -> C [tailport = e, headport = n, constraint = false]
+}
+")
+
+svg <- DiagrammeRsvg::export_svg(flow)
+rsvg::rsvg_png(charToRaw(svg), file = 'flowchart.png', width = 2000, height = 960)
+
+flow
+```
+
+Table 1: The distribution of temporal grammar-symbolic work combinations, 1945-2024. The cells contain the absolute number for each TG-SW combination, including their percentage of the total of all combinations (n = 448). The percentages underneath the x- and y-axis labels are the share of all (uncombined) TGs and SWs respectively.
+```{r}
+df_base <- df_final %>%
+  dplyr::filter(include_for_coding == TRUE) %>%
+  dplyr::filter(temporal_grammar_code != "TG5") %>%
+  dplyr::filter(!is.na(temporal_grammar_code),
+                !is.na(symbolic_work_code))
+
+df_matrix <- df_base %>%
+  dplyr::count(temporal_grammar_code, symbolic_work_code, name = "n") %>%
+  tidyr::complete(temporal_grammar_code, symbolic_work_code, fill = list(n = 0)) %>%
+  dplyr::mutate(
+    pct = 100 * n / sum(n),
+    pct_label = sprintf("(%.1f%%)", pct)
+  )
+
+tg_labels <- df_base %>%
+  dplyr::count(temporal_grammar_code, name = "n") %>%
+  dplyr::mutate(pct = 100 * n / sum(n),
+                label = sprintf("%s\n(%.1f%%)", temporal_grammar_code, pct))
+
+sw_labels <- df_base %>%
+  dplyr::count(symbolic_work_code, name = "n") %>%
+  dplyr::mutate(pct = 100 * n / sum(n),
+                label = sprintf("%s\n(%.1f%%)", symbolic_work_code, pct))
+
+tg_lab_vec <- setNames(tg_labels$label, tg_labels$temporal_grammar_code)
+sw_lab_vec <- setNames(sw_labels$label, sw_labels$symbolic_work_code)
+
+ggplot(df_matrix, aes(x = temporal_grammar_code, y = symbolic_work_code)) +
+  geom_tile(color = "black", fill = NA, linewidth = 0.3) +
+  geom_text(aes(label = n), size = 5, fontface = "bold",
+            color = "black", vjust = -0.2) +
+  geom_text(aes(label = pct_label), size = 3, fontface = "plain",
+            color = "black", vjust = 1.2) +
+  scale_x_discrete(labels = tg_lab_vec, expand = expansion(mult = c(0.02, 0.02))) +
+  scale_y_discrete(labels = sw_lab_vec, expand = expansion(mult = c(0.02, 0.08))) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(panel.grid = element_blank(),
+        axis.text.x = element_text(angle = 0, hjust = 0.5))
+```
+
+Figure 2: Mnemonic tropes per one million tokens per year. 
+
+```{r}
+
+df1 <- fread("Data/df_speeches_1945-2012-non_semanticized.csv", encoding = "UTF-8")
+df2 <- fread("Data/df_speeches_2013-2025-non_semanticized.csv", encoding = "UTF-8")
+
+# Combine the two dataframes
+df_speeches <- rbind(df1, df2)
+
+rm(df1, df2)
+
+df_speeches <- subset(df_speeches, role != "chair")
+df_speeches$date <- as.Date(df_speeches$date)
+
+# Extract year from date
+df_speeches$year <- year(df_speeches$date)
+
+
+mnemonics_per_year <- df_speeches %>%
+  filter(is.na(temporal_grammar_code) | temporal_grammar_code != "TG5") %>%
+  group_by(year) %>%
+  summarise(mnemonics_count = sum(include_for_coding, na.rm = TRUE),
+            total_tokens = sum(ntoken(text), na.rm = TRUE)) %>%
+  mutate(mnemonics_per_million_tokens = (mnemonics_count / total_tokens) * 1e6)
+
+#we'll remove the year 2025
+mnemonics_per_year <- mnemonics_per_year %>%
+  filter(year < 2025)
+
+#we'll add ticks for every 5 years on the x-axs
+mnemonics_per_year %>%
+  ggplot(aes(x = year, y = mnemonics_per_million_tokens)) +
+  geom_line(color = "#D4AF37") +
+  geom_point(color = "#D4AF37") +
+  labs(title = "Mnemonic tropes per million tokens from year to year",
+       x = "Year",
+       y = "Mnemonic Tropes per Million Tokens") +
+  theme_minimal()
+
+mnemonics_per_year %>%
+  ggplot(aes(x = year, y = mnemonics_per_million_tokens)) +
+  geom_line(color = "grey40", linewidth = 0.4, alpha = 0.5) +
+  geom_point(color = "grey10", size = 1.6, alpha = 0.8) +
+  geom_smooth(
+    method = "loess", se = TRUE, span = 0.3,
+    color = "#333333", fill = "#333333",
+    linewidth = 1.3, alpha = 0.15
+  ) +
+  scale_x_continuous(breaks = seq(min(mnemonics_per_year$year), max(mnemonics_per_year$year), by = 10)) +
+  labs(
+    title = NULL,
+    subtitle = NULL,
+    x = NULL,
+    y = "Tropes per million tokens"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold")
+  )
+
+#we'll save this plot
+
+ggsave("Figures/mnemonics_per_million_tokens_over_time.png", 
+       width = 10, 
+       height = 6, 
+       dpi = 300)
+
+```
+
+Figure 3: distribution of top-3 temporal grammar-symbolic work combinations in four
+time periods. 
+```{r}
+# Assumes df_final has columns: year, temporal_grammar_code, symbolic_work_code, include_for_coding
+
+df_top3 <- df_final %>%
+  dplyr::filter(include_for_coding == TRUE) %>%
+  dplyr::filter(temporal_grammar_code != "TG5") %>%
+  dplyr::filter(!is.na(temporal_grammar_code),
+                !is.na(symbolic_work_code),
+                !is.na(year)) %>%
+  dplyr::mutate(
+    period = dplyr::case_when(
+      year >= 1945 & year <= 1970 ~ "1945-1970",
+      year > 1970 & year <= 1990 ~ "1970-1990",
+      year > 1990 & year <= 2010 ~ "1990-2010",
+      year > 2010 & year <= 2024 ~ "2010-2024",
+      TRUE ~ NA_character_
+    ),
+    combo = paste(temporal_grammar_code, symbolic_work_code, sep = "-")
+  ) %>%
+  dplyr::filter(!is.na(period)) %>%
+  dplyr::count(period, combo, name = "n") %>%
+  dplyr::group_by(period) %>%
+  dplyr::slice_max(n, n = 3, with_ties = FALSE) %>%
+  dplyr::ungroup() %>%
+  dplyr::arrange(period, dplyr::desc(n)) %>%
+  dplyr::mutate(combo_period = paste(period, combo, sep = "__"))
+
+# reverse order so highest bar is at top per period
+combo_levels <- df_top3 %>%
+  dplyr::arrange(period, dplyr::desc(n)) %>%
+  dplyr::pull(combo_period) %>%
+  rev()
+
+df_top3 <- df_top3 %>%
+  dplyr::mutate(combo_period = factor(combo_period, levels = combo_levels))
+
+# consistent colors across periods
+combo_levels_global <- df_top3 %>%
+  dplyr::group_by(combo) %>%
+  dplyr::summarise(total = sum(n), .groups = "drop") %>%
+  dplyr::arrange(desc(total)) %>%
+  dplyr::pull(combo)
+
+df_top3 <- df_top3 %>%
+  dplyr::mutate(combo = factor(combo, levels = combo_levels_global))
+
+ggplot(df_top3, aes(x = n, y = combo_period, fill = combo)) +
+  geom_col(width = 0.7) +
+  geom_text(aes(label = n), color = "white", size = 4,
+            position = position_stack(vjust = 0.5)) +
+  facet_wrap(~ period, scales = "free_y") +
+  scale_y_discrete(labels = function(x) sub(".*__", "", x)) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 12) +
+  theme(panel.grid = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        legend.position = "none")
+```

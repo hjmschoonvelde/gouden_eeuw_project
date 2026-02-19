@@ -1,0 +1,235 @@
+---
+title: "GE Confusion Matrices"
+author: "MS"
+date: "2026-01"
+output: html_document
+---
+
+In a first step, we'll load the required packages. 
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(lubridate)
+library(stringr)
+library(data.table)
+library(irr)
+library(ellmer)
+library(quanteda)
+library(quanteda.textstats)
+library(text2vec)
+library(word2vec)
+library(data.table)
+library(Matrix)
+library(jsonlite)
+```
+
+In this script, we'll compare model output and human codings which are stored in the file 'coding_41_52_o3 - coding_41_52_o3.csv' in the subfolder Model_comparisons.
+
+```{r load_data}
+# Load human coding data
+human_coding <- read_csv("Model_comparisons/df_sample2_final.csv")
+
+```
+
+The presence of the relevant tropes is stored in a binary format (1 = present, 0 = absent) in the variables `include_for_coding_o3` for the model and `GE_TROPE..0.1._MS` for the human codes. We'll first create a confusion matrix for these variables. We'll do the same for the other model outputs `including_for_coding` and `include_for_coding_gpt52`, which we'll compare against human-coded benchmarks in the same way.
+
+```{r confusion_matrix}
+
+names(human_coding)
+# Create confusion matrix
+confusion_matrix <- table(Model = human_coding$include_for_coding_final, Human
+ = human_coding$include_for_coding)
+print(confusion_matrix)
+
+# Calculate accuracy, precision, recall, F1-score
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+precision <- confusion_matrix[2,2] / sum(confusion_matrix[2,])
+recall <- confusion_matrix[2,2] / sum(confusion_matrix[,2])
+f1_score <- 2 * (precision * recall) / (precision + recall)
+cat("Accuracy O3:", accuracy, "\n")
+cat("Precision O3:", precision, "\n")
+cat("Recall O3:", recall, "\n")
+cat("F1-score O3:", f1_score, "\n")
+
+
+```
+
+In a next step, we want to do the same but for temporal_grammar_code and temporal_grammar_code_final.
+
+```{r}
+
+
+human_coding_tg <- subset(human_coding, include_for_coding == T & include_for_coding_final == T & temporal_grammar_code_final != "TG5")
+
+#we'll first edit temporal_grammara_code_final to be a factor with the same levels as temporal_grammar_code: TG1, TG2, TG3, TG4, TG5
+
+human_coding_tg$temporal_grammar_code_final <- factor(human_coding_tg$temporal_grammar_code_final, levels = c("TG1", "TG2", "TG3", "TG4"))
+
+human_coding_tg$temporal_grammar_code <- factor(human_coding_tg$temporal_grammar_code, levels = c("TG1", "TG2", "TG3", "TG4"))
+
+
+
+# Confusion matrix for temporal grammar code
+confusion_matrix_temporal <- table(Model = human_coding_tg$temporal_grammar_code_final
+, Human = human_coding_tg$temporal_grammar_code, useNA = "ifany")
+print(confusion_matrix_temporal)
+
+
+# Calculate metrics
+accuracy_temporal <- sum(diag(confusion_matrix_temporal)) / sum(confusion_matrix_temporal)
+precision_temporal <- diag(confusion_matrix_temporal) / rowSums(confusion_matrix_temporal)
+recall_temporal <- diag(confusion_matrix_temporal) / colSums(confusion_matrix_temporal)
+f1_score_temporal <- 2 * (precision_temporal * recall_temporal) /(precision_temporal + recall_temporal)
+cat("Temporal Grammar - Accuracy:", accuracy_temporal, "\n")
+cat("Temporal Grammar - Precision:", precision_temporal, "\n")
+cat("Temporal Grammar - Recall:", recall_temporal, "\n")
+cat("Temporal Grammar - F1-score:", f1_score_temporal, "\n")
+
+```
+
+
+We'll do the same for symbolic_work_code and symbolic_work_code_final.
+
+```{r}
+human_coding_symbolic <- subset(human_coding, include_for_coding == T & include_for_coding_final == T)
+
+human_coding_symbolic$symbolic_work_code_final <- factor(human_coding_symbolic$symbolic_work_code_final, levels = c("SW1", "SW2", "SW3", "SW4", "SW5"))
+
+human_coding_symbolic$symbolic_work_code <- factor(human_coding_symbolic$symbolic_work_code, levels = c("SW1", "SW2", "SW3", "SW4", "SW5"))
+
+
+confusion_matrix_symbolic <- table(Model = human_coding_symbolic$symbolic_work_code_final
+, Human = human_coding_symbolic$symbolic_work_code, useNA = "ifany")
+print(confusion_matrix_symbolic)
+
+
+# Calculate metrics
+accuracy_symbolic <- sum(diag(confusion_matrix_symbolic)) / sum(confusion_matrix_symbolic)
+precision_symbolic <- diag(confusion_matrix_symbolic) / rowSums(confusion_matrix_symbolic)
+recall_symbolic <- diag(confusion_matrix_symbolic) / colSums(confusion_matrix_symbolic)
+f1_score_symbolic <- 2 * (precision_symbolic * recall_symbolic) /(precision_symbolic + recall_symbolic)
+cat("Symbolic Work - Accuracy:", accuracy_symbolic, "\n")
+cat("Symbolic Work - Precision:", precision_symbolic, "\n")
+cat("Symbolic Work - Recall:", recall_symbolic, "\n")
+cat("Symbolic Work - F1-score:", f1_score_symbolic, "\n")
+
+
+
+
+
+
+
+```
+
+
+```{r}
+
+confusion_matrix_symbolic <- table(Model = human_coding$symbolic_work_code_final
+, Human = human_coding$symbolic_work_code)
+
+print(confusion_matrix_symbolic)
+
+
+We can repeat this process for the other model outputs.
+```{r confusion_matrix_other_models}
+# Confusion matrix for including_for_coding
+confusion_matrix_including <- table(Model = human_coding$include_for_coding, Human = human_coding$GE_TROPE..0.1._MS)
+print(confusion_matrix_including)
+# Calculate metrics
+accuracy_including <- sum(diag(confusion_matrix_including)) / sum(confusion_matrix_including)
+precision_including <- confusion_matrix_including[2,2] / sum(confusion_matrix_including[2,])
+recall_including <- confusion_matrix_including[2,2] / sum(confusion_matrix_including[,2])
+f1_score_including <- 2 * (precision_including * recall_including) / (precision_including + recall_including)
+cat("GPT4.1 - Accuracy:", accuracy_including, "\n")
+cat("GPT4.1 - Precision:", precision_including, "\n")
+cat("GPT4.1 - Recall:", recall_including, "\n")
+cat("GPT4.1 - F1-score:", f1_score_including, "\n
+")
+
+# Confusion matrix for include_for_coding_gpt52
+confusion_matrix_gpt52 <- table(Model = human_coding$include_for_coding_gpt52, Human = human_coding$GE_TROPE..0.1._MS)
+print(confusion_matrix_gpt52)
+# Calculate metrics
+accuracy_gpt52 <- sum(diag(confusion_matrix_gpt52)) / sum(confusion
+_matrix_gpt52)
+precision_gpt52 <- confusion_matrix_gpt52[2,2] / sum(confusion
+_matrix_gpt52[2,])
+recall_gpt52 <- confusion_matrix_gpt52[2,2] / sum(conf
+_matrix_gpt52[,2])
+f1_score_gpt52 <- 2 * (precision_gpt52 * recall_gpt
+52) / (precision_gpt52 + recall_gpt52)
+cat("GPT5.2 - Accuracy:", accuracy_gpt52, "\n")
+cat("GPT5.2 - Precision:", precision_gpt52, "\n")
+cat("GPT5.2 - Recall:", recall_gpt52, "\n")
+cat("GPT5.2 - F1-score:", f1_score_gpt52, "\
+n")
+
+```
+
+
+In a next step, we add a variable indicating the false positives for model O3. 
+
+```{r false_positives}
+# Add false positive variable for O3 model
+human_coding <- human_coding %>%
+  mutate(false_positive_o3 = ifelse(include_for_coding_o3 == 1 &
+                                 GE_TROPE..0.1._MS == 0, 1, 0))
+# View the updated data
+head(human_coding)
+
+#now we'll save the updated data
+
+write_csv(human_coding, "Model_comparisons/coding_41_52_o3_with_false_positives.csv")
+```
+
+In a next step, we'll read in the data df_ge_high_sample.csv in the subfolder Data which contains the sample of speeches on which the coding took place. 
+
+```{r load_sample_data}
+# Load sample data
+sample_data <- read_csv("Data/df_ge_high_sample.csv")
+```
+
+We'll now merge human_coding and sample_data based on the speech ID variable `speech_id`.
+
+```{r merge_data}
+# Merge datasets
+merged_data <- human_coding %>%
+  inner_join(sample_data, by = "speech_id")
+
+```
+
+We'll subset the data for which false positives are 1. We'll select only the relevant columns for inspection: `speech_id`, `text`, `include_for_coding_o3`, `GE_TROPE..0.1._MS`, and `false_positive_o3`.
+
+```{r subset_false_positives}
+# Subset for false positives
+false_positives_data <- merged_data %>%
+  filter(false_positive_o3 == 1) %>%
+  select(speech_id, text, include_for_coding_o3, GE_TROPE..0.1._MS, false_positive_o3)
+
+```
+
+We'll save this dataset for inspection
+
+```{r save_false_positives}
+# Save false positives data
+write_csv(false_positives_data, "Model_comparisons/false_positives_o3_inspection.csv")
+
+```
+
+In a next step we'll read in df_speechescoded_o3_rationale.csv in Model_comparisons.
+
+```{r load_rationale_data}
+# Load rationale data
+rationale_data <- read_csv("Model_comparisons/df_speechescoded_o3
+_rationale.csv")
+```
+
+We'll 
+
+
+
