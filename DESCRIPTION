@@ -1,0 +1,24 @@
+Type: Project
+Package: goldenAgePoliticsReproduction
+Title: Reproduction Materials for Golden Age Politics
+Version: 0.1.0
+Authors@R: c(
+    person("Stefan", "Couperus", role = "aut"),
+    person("Martijn", "Schoonvelde", role = "aut")
+  )
+Description: Reproduction scripts, data documentation, prompt materials, and LLM-use reporting for a chapter on "Gouden Eeuw" tropes in Dutch parliamentary speech, 1945-2024.
+Depends:
+    R (>= 4.3)
+Imports:
+    data.table,
+    dplyr,
+    ellmer,
+    ggplot2,
+    jsonlite,
+    quanteda,
+    quanteda.textstats,
+    readr,
+    stringr,
+    tidyr,
+    word2vec
+Encoding: UTF-8
