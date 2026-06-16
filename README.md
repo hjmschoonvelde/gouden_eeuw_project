@@ -5,6 +5,8 @@ This repository contains reproduction and documentation materials for:
 **Golden Age Politics: A Computational-Interpretive Analysis of the "Gouden Eeuw" as a Trope in Dutch Parliamentary Speech, 1945-2024**  
 Stefan Couperus and Martijn Schoonvelde
 
+Forthcoming in (fall 2026): K. Pettersson, K. Eriksson, & M. Menke (Eds.), Revived Futures: The Turn to the Past in European Party Politics Palgrave Macmillan.
+
 The chapter studies how Dutch MPs use "Gouden Eeuw" language as a mnemonic trope in parliamentary speech. The workflow combines dictionary and embedding-assisted retrieval with human validation and LLM-assisted interpretive coding.
 
 ## Quick start
