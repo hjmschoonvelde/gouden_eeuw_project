@@ -28,6 +28,8 @@ The final analytic dataset included here, `data/derived/ge_final_45_24.csv`, con
 
 A [source review in September 2026](metadata_corrections.md) corrected speaker, role and party metadata for eleven contributions. The sample remains unchanged: 375 Tweede Kamer MP contributions, 70 government contributions, one Eerste Kamer senator contribution and one visiting MEP contribution. Party breakdowns use the corrected affiliations; they do not imply that every contribution articulates a party position.
 
+A subsequent [government metadata review](government_metadata.md) checked the 47 government speakers against dated Parlement.com biographies. It fills 69 missing party affiliations and records the primary ministerial or state-secretary position for all 70 government contributions, matched to the speech date. Party breakdowns include these verified affiliations while the speaking role remains `government`. All speech texts, inclusion decisions and TG/SW assignments are unchanged.
+
 Speaker names in the published data now follow the [reviewed biography registry](speaker_links.md), with original corpus labels retained separately. Name changes do not alter the coded speech text or the analytical sample.
 
 ## Coding

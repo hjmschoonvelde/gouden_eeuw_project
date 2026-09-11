@@ -2,6 +2,14 @@
 
 ## Metadata update, 2026-09-11
 
+The follow-up [government review](government_metadata.md) covers 70 contributions
+by 47 speakers and 49 dated primary offices. The same checks below pass with all
+69 missing government affiliations filled. All original cells outside the
+documented metadata changes, row order and human/model labels are preserved.
+Only the party table and party figure change among the reproduction outputs;
+the regenerated figure has been visually checked. The review application can
+be repeated with `python3 scripts/apply_government_metadata.py`.
+
 ```sh
 python3 tests/test_metadata_corrections.py --baseline 05c5f4e
 Rscript --vanilla scripts/run_all.R

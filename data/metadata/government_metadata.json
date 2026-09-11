@@ -1,0 +1,2375 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-11",
+  "baseline_commit": "4a977ca124d3f9e2fdfa4391e4443c04f2bb569c",
+  "scope": "The 70 government contributions by 47 reviewed people in the 447-contribution analytic sample, and matching speech IDs in the candidate and validation-sample files. Other candidate records are outside this review.",
+  "method": "Match the contribution date to the dated primary ministerial or state-secretary office in Parlement.com, and review the party history at that date. Party affiliation does not imply speaking for a parliamentary party. Roles, identities, texts, coding, inclusion and ordering are unchanged. Dutch office titles give the primary portfolio; English capacities are editorial translations. Detailed delegated responsibilities and additional deputy-premier offices are not an exhaustive part of this metadata.",
+  "date_convention": "ISO dates copied from Parlement.com: office start inclusive, departure date exclusive. No reviewed speech falls exactly on a departure date. A continuous same-portfolio term can span multiple cabinets.",
+  "people": [
+    {
+      "person_id": "mr-h-henk-mulderije",
+      "speaker": "Henk Mulderije",
+      "party_ref": "nl.p.chu",
+      "party_basis": "CHU from 1929.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-h-henk-mulderije#p2"
+      ],
+      "profile_html_sha256": "028cd525941e7222013f0c6fcef463bf3ae8a6bc3d40883448020af4f29f2141"
+    },
+    {
+      "person_id": "jg-ko-suurhoff",
+      "speaker": "Ko Suurhoff",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from February 1946; earlier SDAP membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/jg-ko-suurhoff#p2"
+      ],
+      "profile_html_sha256": "0e9fc5028317d6ef05af319782e950fc830aab845ba67b3b4e3c95087fcb12b4"
+    },
+    {
+      "person_id": "pjs-piet-de-jong",
+      "speaker": "Piet de Jong",
+      "party_ref": "nl.p.kvp",
+      "party_basis": "KVP from 1959; the cabinet roster also identifies his 1959–1963 state-secretary appointment as KVP. The biography does not give an exact membership start day.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/pjs-piet-de-jong#p2",
+        "https://www.parlement.com/kabinet-de-quay-1959-1963"
+      ],
+      "profile_html_sha256": "251903b15dadc275e8ca646b60eb7b5a019f4ceb94394f6f352cac4c21f3caae"
+    },
+    {
+      "person_id": "mr-vgm-victor-marijnen",
+      "speaker": "Victor Marijnen",
+      "party_ref": "nl.p.kvp",
+      "party_basis": "KVP affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-vgm-victor-marijnen#p2"
+      ],
+      "profile_html_sha256": "02fbff24b73ca19e16c378d547c7a9297f85900d6d1041fffb24f83d2099603c"
+    },
+    {
+      "person_id": "mr-y-ynso-scholten",
+      "speaker": "Ynso Scholten",
+      "party_ref": "nl.p.chu",
+      "party_basis": "CHU from June 1959.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-y-ynso-scholten#p2"
+      ],
+      "profile_html_sha256": "705878f4ad79037ee2155434ae5d008fcd702f51d8c4cc11457b75b517b9db26"
+    },
+    {
+      "person_id": "dr-ia-isaac-diepenhorst",
+      "speaker": "Isaäc Diepenhorst",
+      "party_ref": "nl.p.arp",
+      "party_basis": "ARP until October 1980; later CDA membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-ia-isaac-diepenhorst#p2"
+      ],
+      "profile_html_sha256": "d4ef66a26b4b985cdcba58c0727c2d4b0dde65b04d292dfcd87e40059481e2ea"
+    },
+    {
+      "person_id": "ir-pj-pierre-lardinois",
+      "speaker": "Pierre Lardinois",
+      "party_ref": "nl.p.kvp",
+      "party_basis": "KVP during his ministerial career; later CDA membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/ir-pj-pierre-lardinois#p2"
+      ],
+      "profile_html_sha256": "114da044cdb206a6f9bb339886199511d09f501d0b624014f2c2fe3f396c0521"
+    },
+    {
+      "person_id": "mr-chf-carel-polak",
+      "speaker": "Carel Polak",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-chf-carel-polak#p2"
+      ],
+      "profile_html_sha256": "0cc9baa1449a76190f74b4d030747b8375e41b6dff157b01cd4b38c2e665c8cd"
+    },
+    {
+      "person_id": "mr-hkj-henk-beernink",
+      "speaker": "Henk Beernink",
+      "party_ref": "nl.p.chu",
+      "party_basis": "CHU from 1932.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-hkj-henk-beernink#p2"
+      ],
+      "profile_html_sha256": "c3eb52edde8a2854c52d8be8625787c3f28943858ad7f85b19800e2546b6242d"
+    },
+    {
+      "person_id": "mr-w-willem-scholten",
+      "speaker": "Willem Scholten",
+      "party_ref": "nl.p.chu",
+      "party_basis": "CHU until October 1980; confirms the existing affiliation.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-w-willem-scholten#p2"
+      ],
+      "profile_html_sha256": "b23e411109ac62bc81cd7e018f64df0de2c65124b6644b2926459db113f112c1"
+    },
+    {
+      "person_id": "jln-jan-schaefer",
+      "speaker": "Jan Schaefer",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from 1969; earlier CPN and later local-party affiliations excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/jln-jan-schaefer#p2"
+      ],
+      "profile_html_sha256": "5420e3e13363fca8a49c683e351bc73c21387fafe0451adb462eda537c53dfd5"
+    },
+    {
+      "person_id": "mr-hw-harry-van-doorn",
+      "speaker": "Harry van Doorn",
+      "party_ref": "nl.p.ppr",
+      "party_basis": "PPR from April 1968 to February 1986; earlier KVP and later PvdA memberships excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-hw-harry-van-doorn#p2"
+      ],
+      "profile_html_sha256": "7be62ad0c2f09556580b1dc09db26fbf1a8cbeb91317512821b98c26e155fa03"
+    },
+    {
+      "person_id": "dr-mhm-michel-van-hulten",
+      "speaker": "Michel van Hulten",
+      "party_ref": "nl.p.ppr",
+      "party_basis": "PPR from 1968 to 1981; earlier and later affiliations excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-mhm-michel-van-hulten#p2"
+      ],
+      "profile_html_sha256": "8071829d15e40079e879643216455d6189b5f6f49e14fe2266f49832b36e128e"
+    },
+    {
+      "person_id": "dr-cha-chris-van-der-klaauw",
+      "speaker": "Chris van der Klaauw",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-cha-chris-van-der-klaauw#p2"
+      ],
+      "profile_html_sha256": "2cbe84ed92cb9f95c3fae94fe2fc33b4a13b339ecca00b077f735e05f6c62212"
+    },
+    {
+      "person_id": "mr-annelien-kappeyne-van-de-coppello",
+      "speaker": "Annelien Kappeyne van de Coppello",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 1962.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-annelien-kappeyne-van-de-coppello#p2"
+      ],
+      "profile_html_sha256": "d51056e9513552e6dcb39082a7f46823261d7294d4bb031a3c7cce5c2ccf1403"
+    },
+    {
+      "person_id": "drs-gmv-gijs-van-aardenne",
+      "speaker": "Gijs van Aardenne",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 1958.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne#p2"
+      ],
+      "profile_html_sha256": "53288885798b2938d5cfb1e52c211df9b0175508073a3545c293d0d30959e602"
+    },
+    {
+      "person_id": "mr-gph-gerrit-brokx",
+      "speaker": "Gerrit Brokx",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA from October 1980; earlier KVP membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-gph-gerrit-brokx#p2"
+      ],
+      "profile_html_sha256": "a7f2f68e870e752b524dd65102f2e1a360bf82c8ce446d6729e3b11a423e0c22"
+    },
+    {
+      "person_id": "dr-wf-wim-van-eekelen",
+      "speaker": "Wim van Eekelen",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-wf-wim-van-eekelen#p2"
+      ],
+      "profile_html_sha256": "6245a49544fdd35a1f990429cc76c254f6f48a3ad82afd5ef33879554bf270d6"
+    },
+    {
+      "person_id": "mrdrs-lc-elco-brinkman",
+      "speaker": "Elco Brinkman",
+      "party_ref": "nl.p.cda",
+      "party_basis": "Direct CDA membership from 1973.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mrdrs-lc-elco-brinkman#p2"
+      ],
+      "profile_html_sha256": "1bfcedcb50adc18983d1739b4e05ce2cfe8be43083b875de701d0625ad5cfe25"
+    },
+    {
+      "person_id": "drs-djd-dick-dees",
+      "speaker": "Dick Dees",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 1967.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-djd-dick-dees#p2"
+      ],
+      "profile_html_sha256": "73bfef05e515379e0d91e58979a7af81fe3a2149ffb9f45b4009e023db3825b9"
+    },
+    {
+      "person_id": "drs-ehthm-ed-nijpels",
+      "speaker": "Ed Nijpels",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from August 1968.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-ehthm-ed-nijpels#p2"
+      ],
+      "profile_html_sha256": "882a72285d8417898bc3a62cca14f49af636da892578dbf6e3093ff52dfec324"
+    },
+    {
+      "person_id": "mr-he-henk-koning",
+      "speaker": "Henk Koning",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 1962.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-he-henk-koning#p2"
+      ],
+      "profile_html_sha256": "b9d476b321722a9264c0f612c1e92515059ba4b9f2e4b7714508a245f568ef97"
+    },
+    {
+      "person_id": "mr-f-frits-korthals-altes",
+      "speaker": "Frits Korthals Altes",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from April 1956.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-f-frits-korthals-altes#p2"
+      ],
+      "profile_html_sha256": "05893ce37c6738b9e2982e09f30a9929f787a7a7a7e34cabbc2d98bdea26968b"
+    },
+    {
+      "person_id": "drs-ci-ien-dales",
+      "speaker": "Ien Dales",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from 1968.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-ci-ien-dales#p2"
+      ],
+      "profile_html_sha256": "d0941111f1aff75fe85a437f06cf60b541ef82ff2721a65bea9112351d87332b"
+    },
+    {
+      "person_id": "jrh-hanja-maij-weggen",
+      "speaker": "Hanja Maij-Weggen",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA from October 1980; earlier ARP membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/jrh-hanja-maij-weggen#p2"
+      ],
+      "profile_html_sha256": "21812f9dd6c093a8bbf476aa5ea3dd81e0c531a33b3ed2481e8bd68711f9cdfc"
+    },
+    {
+      "person_id": "dr-je-koos-andriessen",
+      "speaker": "Koos Andriessen",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA from October 1980; earlier CHU membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-je-koos-andriessen#p2"
+      ],
+      "profile_html_sha256": "9e54a412d48ba60ef1cfc2da6982ff6c2d9a0da14e563e0ebbbde28daab10e18"
+    },
+    {
+      "person_id": "e-elske-ter-veld",
+      "speaker": "Elske ter Veld",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from 1966.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/e-elske-ter-veld#p2"
+      ],
+      "profile_html_sha256": "9c751fd4b6a62c9960940fbd3db0fe12227f144e0229d2300d4a815fb53801d4"
+    },
+    {
+      "person_id": "drir-jmm-jo-ritzen",
+      "speaker": "Jo Ritzen",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from 1975.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drir-jmm-jo-ritzen#p2"
+      ],
+      "profile_html_sha256": "6ebc0f5cb3f44cc0694cfc91cd8c8bb32dd21680c7610a28eb0d9bbaae5dba3e"
+    },
+    {
+      "person_id": "mr-m-michiel-patijn",
+      "speaker": "Michiel Patijn",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD during the state-secretary appointment; earlier PvdA membership ended in 1978.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-m-michiel-patijn#p2"
+      ],
+      "profile_html_sha256": "f02e3d1f7ae173b907e0a2457da6a5407e4bb562433a6fc3ed8ede3f5aa9a862"
+    },
+    {
+      "person_id": "mr-ema-elizabeth-schmitz",
+      "speaker": "Elizabeth Schmitz",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from 1974; earlier D66 membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-ema-elizabeth-schmitz#p2"
+      ],
+      "profile_html_sha256": "5e49dd9ba06a92f705d88d921c74a7e1035dc72e2ded2898ceee9fad2818a7c8"
+    },
+    {
+      "person_id": "drs-aad-nuis",
+      "speaker": "Aad Nuis",
+      "party_ref": "nl.p.d66",
+      "party_basis": "D66; earlier D'66 spelling reflects a party-name change.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-aad-nuis#p2"
+      ],
+      "profile_html_sha256": "484fd2feb7e2ae0c16698f1b8960f86315f1dbc2e8764e3a00cb72e2cc309148"
+    },
+    {
+      "person_id": "dr-e-els-borst-eilers",
+      "speaker": "Els Borst-Eilers",
+      "party_ref": "nl.p.d66",
+      "party_basis": "D66; earlier D'66 spelling reflects a party-name change.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-e-els-borst-eilers#p2"
+      ],
+      "profile_html_sha256": "1f84fb8c867ae2aa1787c9f618debeb65bfe93973b1fda1ed7d3cddf386fe31a"
+    },
+    {
+      "person_id": "drs-da-dick-benschop",
+      "speaker": "Dick Benschop",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-da-dick-benschop#p2"
+      ],
+      "profile_html_sha256": "c9b932085215142c5548262474b64cb42550243682b12e356ccf47b015ea69d1"
+    },
+    {
+      "person_id": "dr-w-wim-kok",
+      "speaker": "Wim Kok",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from January 1961.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-w-wim-kok#p2"
+      ],
+      "profile_html_sha256": "ae90c04e48b93875cc9692599c07249a95d106948c39f8cacee110f9d9b0399f"
+    },
+    {
+      "person_id": "t-tineke-netelenbos",
+      "speaker": "Tineke Netelenbos",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/t-tineke-netelenbos#p2"
+      ],
+      "profile_html_sha256": "4cd0f4aadb77ea3f46cdd3a5ed02e40442f316ef7d6d05d554c67f0836804946"
+    },
+    {
+      "person_id": "mr-jph-piet-hein-donner",
+      "speaker": "Piet Hein Donner",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-jph-piet-hein-donner#p2"
+      ],
+      "profile_html_sha256": "d637c3ce5ffb3249b26e531fbc020e7364afbabbb33dcb10cac6f7309e54f624"
+    },
+    {
+      "person_id": "profdr-jp-jan-peter-balkenende",
+      "speaker": "Jan Peter Balkenende",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/profdr-jp-jan-peter-balkenende#p2"
+      ],
+      "profile_html_sha256": "7962771089bce219d52afca41a34fe116c387ecf0fa9741977171a3c125a92e9"
+    },
+    {
+      "person_id": "hgj-henk-kamp",
+      "speaker": "Henk Kamp",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 1972.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/hgj-henk-kamp#p2"
+      ],
+      "profile_html_sha256": "628377b37f4fb163f26b6369c9012e7c9cb2cb0ad310d0c48c9f387d5a15d525"
+    },
+    {
+      "person_id": "ir-ceg-karien-van-gennip",
+      "speaker": "Karien van Gennip",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA from 1998.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/ir-ceg-karien-van-gennip#p2"
+      ],
+      "profile_html_sha256": "2051232d0942747f4554e642d5d871deae582e287f17b68d1928924c182250de"
+    },
+    {
+      "person_id": "dr-g-gerrit-zalm",
+      "speaker": "Gerrit Zalm",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD during the ministerial appointment; earlier PvdA membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-g-gerrit-zalm#p2"
+      ],
+      "profile_html_sha256": "ae2eac28d5251e94273cf1c59ef76388a04a00b0ec5c450de7043f1a3cc36867"
+    },
+    {
+      "person_id": "dr-cp-cees-veerman",
+      "speaker": "Cees Veerman",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA affiliation; earlier voting for CHU is not used as a membership assignment.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/dr-cp-cees-veerman#p2"
+      ],
+      "profile_html_sha256": "2b4db4d41d9d2da637427a11a51a5258084d7fb30ce70da113e3363ef2a96150"
+    },
+    {
+      "person_id": "drs-m-mark-rutte",
+      "speaker": "Mark Rutte",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-m-mark-rutte#p2"
+      ],
+      "profile_html_sha256": "71c3df24445180a96ef14030ce7a60341043c9c8e3848660c37288e83a3650dd"
+    },
+    {
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "speaker": "Jeanine Hennis-Plasschaert",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 2000; the European parliamentary group is a separate affiliation.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert#p2"
+      ],
+      "profile_html_sha256": "14a68a2c50789bddb6e47a679993c0bdb6e2267f64ec50a707f164dc44598ae2"
+    },
+    {
+      "person_id": "ir-ed-eric-wiebes",
+      "speaker": "Eric Wiebes",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD membership resumed in 2005, before all included contributions.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/ir-ed-eric-wiebes#p2"
+      ],
+      "profile_html_sha256": "85abd6a814e724d9e782e40dcac8918c07eb81bd5adee3dfaa91f0f9a3cd4f41"
+    },
+    {
+      "person_id": "profdr-m-jet-bussemaker",
+      "speaker": "Jet Bussemaker",
+      "party_ref": "nl.p.pvda",
+      "party_basis": "PvdA from 1997; earlier GroenLinks membership excluded.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/profdr-m-jet-bussemaker#p2"
+      ],
+      "profile_html_sha256": "845adf423e2cdcfaefc46e1ef7bb92fb7271d75894a305b9cd37d729410bb527"
+    },
+    {
+      "person_id": "drs-sa-stef-blok",
+      "speaker": "Stef Blok",
+      "party_ref": "nl.p.vvd",
+      "party_basis": "VVD from 1988.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/drs-sa-stef-blok#p2"
+      ],
+      "profile_html_sha256": "b4a13f6faf2bbe34b9ab661d1d1037a48b032349b7a9556f59ff98863019b31b"
+    },
+    {
+      "person_id": "mr-wb-wopke-hoekstra",
+      "speaker": "Wopke Hoekstra",
+      "party_ref": "nl.p.cda",
+      "party_basis": "CDA affiliation in the biography.",
+      "party_sources": [
+        "https://www.parlement.com/biografie/mr-wb-wopke-hoekstra#p2"
+      ],
+      "profile_html_sha256": "e9cef2bf3fc8ca128a85c726f11e8f2e83013882f7d90b682a53c9731dd44868"
+    }
+  ],
+  "terms": [
+    {
+      "term_id": "mr-h-henk-mulderije:1951-03-15",
+      "person_id": "mr-h-henk-mulderije",
+      "government_position_nl": "Minister van Justitie",
+      "speaking_capacity": "Minister of Justice",
+      "government_position_start": "1951-03-15",
+      "government_position_end": "1952-09-02",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-h-henk-mulderije",
+      "position_source": "https://www.parlement.com/biografie/mr-h-henk-mulderije#p3"
+    },
+    {
+      "term_id": "jg-ko-suurhoff:1952-09-02",
+      "person_id": "jg-ko-suurhoff",
+      "government_position_nl": "Minister van Sociale Zaken en Volksgezondheid",
+      "speaking_capacity": "Minister of Social Affairs and Public Health",
+      "government_position_start": "1952-09-02",
+      "government_position_end": "1958-12-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/jg-ko-suurhoff",
+      "position_source": "https://www.parlement.com/biografie/jg-ko-suurhoff#p3"
+    },
+    {
+      "term_id": "pjs-piet-de-jong:1959-06-25",
+      "person_id": "pjs-piet-de-jong",
+      "government_position_nl": "Staatssecretaris van Defensie",
+      "speaking_capacity": "State Secretary for Defence",
+      "government_position_start": "1959-06-25",
+      "government_position_end": "1963-07-24",
+      "government_metadata_source": "https://www.parlement.com/biografie/pjs-piet-de-jong",
+      "position_source": "https://www.parlement.com/biografie/pjs-piet-de-jong#p3"
+    },
+    {
+      "term_id": "mr-vgm-victor-marijnen:1959-05-19",
+      "person_id": "mr-vgm-victor-marijnen",
+      "government_position_nl": "Minister van Landbouw en Visserij",
+      "speaking_capacity": "Minister of Agriculture and Fisheries",
+      "government_position_start": "1959-05-19",
+      "government_position_end": "1963-07-24",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-vgm-victor-marijnen",
+      "position_source": "https://www.parlement.com/biografie/mr-vgm-victor-marijnen#p3"
+    },
+    {
+      "term_id": "mr-y-ynso-scholten:1963-07-24",
+      "person_id": "mr-y-ynso-scholten",
+      "government_position_nl": "Minister van Justitie",
+      "speaking_capacity": "Minister of Justice",
+      "government_position_start": "1963-07-24",
+      "government_position_end": "1965-04-14",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-y-ynso-scholten",
+      "position_source": "https://www.parlement.com/biografie/mr-y-ynso-scholten#p3"
+    },
+    {
+      "term_id": "dr-ia-isaac-diepenhorst:1965-04-14",
+      "person_id": "dr-ia-isaac-diepenhorst",
+      "government_position_nl": "Minister van Onderwijs en Wetenschappen",
+      "speaking_capacity": "Minister of Education and Sciences",
+      "government_position_start": "1965-04-14",
+      "government_position_end": "1967-04-05",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-ia-isaac-diepenhorst",
+      "position_source": "https://www.parlement.com/biografie/dr-ia-isaac-diepenhorst#p3"
+    },
+    {
+      "term_id": "ir-pj-pierre-lardinois:1967-04-05",
+      "person_id": "ir-pj-pierre-lardinois",
+      "government_position_nl": "Minister van Landbouw en Visserij",
+      "speaking_capacity": "Minister of Agriculture and Fisheries",
+      "government_position_start": "1967-04-05",
+      "government_position_end": "1973-01-01",
+      "government_metadata_source": "https://www.parlement.com/biografie/ir-pj-pierre-lardinois",
+      "position_source": "https://www.parlement.com/biografie/ir-pj-pierre-lardinois#p3"
+    },
+    {
+      "term_id": "mr-chf-carel-polak:1967-04-05",
+      "person_id": "mr-chf-carel-polak",
+      "government_position_nl": "Minister van Justitie",
+      "speaking_capacity": "Minister of Justice",
+      "government_position_start": "1967-04-05",
+      "government_position_end": "1971-07-06",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-chf-carel-polak",
+      "position_source": "https://www.parlement.com/biografie/mr-chf-carel-polak#p3"
+    },
+    {
+      "term_id": "mr-hkj-henk-beernink:1967-04-05",
+      "person_id": "mr-hkj-henk-beernink",
+      "government_position_nl": "Minister van Binnenlandse Zaken",
+      "speaking_capacity": "Minister of the Interior",
+      "government_position_start": "1967-04-05",
+      "government_position_end": "1971-07-06",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-hkj-henk-beernink",
+      "position_source": "https://www.parlement.com/biografie/mr-hkj-henk-beernink#p3"
+    },
+    {
+      "term_id": "mr-w-willem-scholten:1971-07-14",
+      "person_id": "mr-w-willem-scholten",
+      "government_position_nl": "Staatssecretaris van Financiën",
+      "speaking_capacity": "State Secretary for Finance",
+      "government_position_start": "1971-07-14",
+      "government_position_end": "1973-03-19",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-w-willem-scholten",
+      "position_source": "https://www.parlement.com/biografie/mr-w-willem-scholten#p3"
+    },
+    {
+      "term_id": "jln-jan-schaefer:1973-05-11",
+      "person_id": "jln-jan-schaefer",
+      "government_position_nl": "Staatssecretaris van Volkshuisvesting en Ruimtelijke Ordening",
+      "speaking_capacity": "State Secretary for Housing and Spatial Planning",
+      "government_position_start": "1973-05-11",
+      "government_position_end": "1977-09-08",
+      "government_metadata_source": "https://www.parlement.com/biografie/jln-jan-schaefer",
+      "position_source": "https://www.parlement.com/biografie/jln-jan-schaefer#p3"
+    },
+    {
+      "term_id": "mr-hw-harry-van-doorn:1973-05-11",
+      "person_id": "mr-hw-harry-van-doorn",
+      "government_position_nl": "Minister van Cultuur, Recreatie en Maatschappelijk Werk",
+      "speaking_capacity": "Minister of Culture, Recreation and Social Work",
+      "government_position_start": "1973-05-11",
+      "government_position_end": "1977-12-19",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-hw-harry-van-doorn",
+      "position_source": "https://www.parlement.com/biografie/mr-hw-harry-van-doorn#p3"
+    },
+    {
+      "term_id": "dr-mhm-michel-van-hulten:1973-05-11",
+      "person_id": "dr-mhm-michel-van-hulten",
+      "government_position_nl": "Staatssecretaris van Verkeer en Waterstaat",
+      "speaking_capacity": "State Secretary for Transport and Water Management",
+      "government_position_start": "1973-05-11",
+      "government_position_end": "1977-12-19",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-mhm-michel-van-hulten",
+      "position_source": "https://www.parlement.com/biografie/dr-mhm-michel-van-hulten#p3"
+    },
+    {
+      "term_id": "dr-cha-chris-van-der-klaauw:1977-12-19",
+      "person_id": "dr-cha-chris-van-der-klaauw",
+      "government_position_nl": "Minister van Buitenlandse Zaken",
+      "speaking_capacity": "Minister of Foreign Affairs",
+      "government_position_start": "1977-12-19",
+      "government_position_end": "1981-09-11",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-cha-chris-van-der-klaauw",
+      "position_source": "https://www.parlement.com/biografie/dr-cha-chris-van-der-klaauw#p3"
+    },
+    {
+      "term_id": "mr-annelien-kappeyne-van-de-coppello:1982-11-08",
+      "person_id": "mr-annelien-kappeyne-van-de-coppello",
+      "government_position_nl": "Staatssecretaris van Sociale Zaken en Werkgelegenheid",
+      "speaking_capacity": "State Secretary for Social Affairs and Employment",
+      "government_position_start": "1982-11-08",
+      "government_position_end": "1986-07-14",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-annelien-kappeyne-van-de-coppello",
+      "position_source": "https://www.parlement.com/biografie/mr-annelien-kappeyne-van-de-coppello#p3"
+    },
+    {
+      "term_id": "drs-gmv-gijs-van-aardenne:1982-11-04",
+      "person_id": "drs-gmv-gijs-van-aardenne",
+      "government_position_nl": "Minister van Economische Zaken",
+      "speaking_capacity": "Minister of Economic Affairs",
+      "government_position_start": "1982-11-04",
+      "government_position_end": "1986-07-14",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne",
+      "position_source": "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne#p3"
+    },
+    {
+      "term_id": "mr-gph-gerrit-brokx:1982-11-05",
+      "person_id": "mr-gph-gerrit-brokx",
+      "government_position_nl": "Staatssecretaris van Volkshuisvesting, Ruimtelijke Ordening en Milieubeheer",
+      "speaking_capacity": "State Secretary for Housing, Spatial Planning and the Environment",
+      "government_position_start": "1982-11-05",
+      "government_position_end": "1986-10-23",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-gph-gerrit-brokx",
+      "position_source": "https://www.parlement.com/biografie/mr-gph-gerrit-brokx#p3"
+    },
+    {
+      "term_id": "dr-wf-wim-van-eekelen:1982-11-05",
+      "person_id": "dr-wf-wim-van-eekelen",
+      "government_position_nl": "Staatssecretaris van Buitenlandse Zaken",
+      "speaking_capacity": "State Secretary for Foreign Affairs",
+      "government_position_start": "1982-11-05",
+      "government_position_end": "1986-07-14",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-wf-wim-van-eekelen",
+      "position_source": "https://www.parlement.com/biografie/dr-wf-wim-van-eekelen#p3"
+    },
+    {
+      "term_id": "mrdrs-lc-elco-brinkman:1982-11-04",
+      "person_id": "mrdrs-lc-elco-brinkman",
+      "government_position_nl": "Minister van Welzijn, Volksgezondheid en Cultuur",
+      "speaking_capacity": "Minister of Welfare, Public Health and Culture",
+      "government_position_start": "1982-11-04",
+      "government_position_end": "1989-11-07",
+      "government_metadata_source": "https://www.parlement.com/biografie/mrdrs-lc-elco-brinkman",
+      "position_source": "https://www.parlement.com/biografie/mrdrs-lc-elco-brinkman#p3"
+    },
+    {
+      "term_id": "drs-djd-dick-dees:1986-07-14",
+      "person_id": "drs-djd-dick-dees",
+      "government_position_nl": "Staatssecretaris van Welzijn, Volksgezondheid en Cultuur",
+      "speaking_capacity": "State Secretary for Welfare, Public Health and Culture",
+      "government_position_start": "1986-07-14",
+      "government_position_end": "1989-11-07",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-djd-dick-dees",
+      "position_source": "https://www.parlement.com/biografie/drs-djd-dick-dees#p3"
+    },
+    {
+      "term_id": "drs-ehthm-ed-nijpels:1986-07-14",
+      "person_id": "drs-ehthm-ed-nijpels",
+      "government_position_nl": "Minister van Volkshuisvesting, Ruimtelijke Ordening en Milieubeheer",
+      "speaking_capacity": "Minister of Housing, Spatial Planning and the Environment",
+      "government_position_start": "1986-07-14",
+      "government_position_end": "1989-11-07",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-ehthm-ed-nijpels",
+      "position_source": "https://www.parlement.com/biografie/drs-ehthm-ed-nijpels#p3"
+    },
+    {
+      "term_id": "mr-he-henk-koning:1982-11-05",
+      "person_id": "mr-he-henk-koning",
+      "government_position_nl": "Staatssecretaris van Financiën",
+      "speaking_capacity": "State Secretary for Finance",
+      "government_position_start": "1982-11-05",
+      "government_position_end": "1989-11-07",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-he-henk-koning",
+      "position_source": "https://www.parlement.com/biografie/mr-he-henk-koning#p3"
+    },
+    {
+      "term_id": "mr-f-frits-korthals-altes:1982-11-04",
+      "person_id": "mr-f-frits-korthals-altes",
+      "government_position_nl": "Minister van Justitie",
+      "speaking_capacity": "Minister of Justice",
+      "government_position_start": "1982-11-04",
+      "government_position_end": "1989-11-07",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-f-frits-korthals-altes",
+      "position_source": "https://www.parlement.com/biografie/mr-f-frits-korthals-altes#p3"
+    },
+    {
+      "term_id": "drs-ci-ien-dales:1989-11-07",
+      "person_id": "drs-ci-ien-dales",
+      "government_position_nl": "Minister van Binnenlandse Zaken",
+      "speaking_capacity": "Minister of the Interior",
+      "government_position_start": "1989-11-07",
+      "government_position_end": "1994-01-10",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-ci-ien-dales",
+      "position_source": "https://www.parlement.com/biografie/drs-ci-ien-dales#p3"
+    },
+    {
+      "term_id": "jrh-hanja-maij-weggen:1989-11-07",
+      "person_id": "jrh-hanja-maij-weggen",
+      "government_position_nl": "Minister van Verkeer en Waterstaat",
+      "speaking_capacity": "Minister of Transport and Water Management",
+      "government_position_start": "1989-11-07",
+      "government_position_end": "1994-07-16",
+      "government_metadata_source": "https://www.parlement.com/biografie/jrh-hanja-maij-weggen",
+      "position_source": "https://www.parlement.com/biografie/jrh-hanja-maij-weggen#p3"
+    },
+    {
+      "term_id": "dr-je-koos-andriessen:1989-11-07",
+      "person_id": "dr-je-koos-andriessen",
+      "government_position_nl": "Minister van Economische Zaken",
+      "speaking_capacity": "Minister of Economic Affairs",
+      "government_position_start": "1989-11-07",
+      "government_position_end": "1994-08-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-je-koos-andriessen",
+      "position_source": "https://www.parlement.com/biografie/dr-je-koos-andriessen#p3"
+    },
+    {
+      "term_id": "e-elske-ter-veld:1989-11-07",
+      "person_id": "e-elske-ter-veld",
+      "government_position_nl": "Staatssecretaris van Sociale Zaken en Werkgelegenheid",
+      "speaking_capacity": "State Secretary for Social Affairs and Employment",
+      "government_position_start": "1989-11-07",
+      "government_position_end": "1993-06-04",
+      "government_metadata_source": "https://www.parlement.com/biografie/e-elske-ter-veld",
+      "position_source": "https://www.parlement.com/biografie/e-elske-ter-veld#p3"
+    },
+    {
+      "term_id": "drir-jmm-jo-ritzen:1989-11-07",
+      "person_id": "drir-jmm-jo-ritzen",
+      "government_position_nl": "Minister van Onderwijs en Wetenschappen",
+      "speaking_capacity": "Minister of Education and Sciences",
+      "government_position_start": "1989-11-07",
+      "government_position_end": "1994-08-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/drir-jmm-jo-ritzen",
+      "position_source": "https://www.parlement.com/biografie/drir-jmm-jo-ritzen#p3"
+    },
+    {
+      "term_id": "drir-jmm-jo-ritzen:1994-08-22",
+      "person_id": "drir-jmm-jo-ritzen",
+      "government_position_nl": "Minister van Onderwijs, Cultuur en Wetenschappen",
+      "speaking_capacity": "Minister of Education, Culture and Sciences",
+      "government_position_start": "1994-08-22",
+      "government_position_end": "1998-08-03",
+      "government_metadata_source": "https://www.parlement.com/biografie/drir-jmm-jo-ritzen",
+      "position_source": "https://www.parlement.com/biografie/drir-jmm-jo-ritzen#p3"
+    },
+    {
+      "term_id": "mr-m-michiel-patijn:1994-08-22",
+      "person_id": "mr-m-michiel-patijn",
+      "government_position_nl": "Staatssecretaris van Buitenlandse Zaken",
+      "speaking_capacity": "State Secretary for Foreign Affairs",
+      "government_position_start": "1994-08-22",
+      "government_position_end": "1998-08-03",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-m-michiel-patijn",
+      "position_source": "https://www.parlement.com/biografie/mr-m-michiel-patijn#p3"
+    },
+    {
+      "term_id": "mr-ema-elizabeth-schmitz:1994-08-22",
+      "person_id": "mr-ema-elizabeth-schmitz",
+      "government_position_nl": "Staatssecretaris van Justitie",
+      "speaking_capacity": "State Secretary for Justice",
+      "government_position_start": "1994-08-22",
+      "government_position_end": "1998-08-03",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-ema-elizabeth-schmitz",
+      "position_source": "https://www.parlement.com/biografie/mr-ema-elizabeth-schmitz#p3"
+    },
+    {
+      "term_id": "drs-aad-nuis:1994-08-22",
+      "person_id": "drs-aad-nuis",
+      "government_position_nl": "Staatssecretaris van Onderwijs, Cultuur en Wetenschappen",
+      "speaking_capacity": "State Secretary for Education, Culture and Sciences",
+      "government_position_start": "1994-08-22",
+      "government_position_end": "1998-08-03",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-aad-nuis",
+      "position_source": "https://www.parlement.com/biografie/drs-aad-nuis#p3"
+    },
+    {
+      "term_id": "dr-e-els-borst-eilers:1994-08-22",
+      "person_id": "dr-e-els-borst-eilers",
+      "government_position_nl": "Minister van Volksgezondheid, Welzijn en Sport",
+      "speaking_capacity": "Minister of Health, Welfare and Sport",
+      "government_position_start": "1994-08-22",
+      "government_position_end": "2002-07-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-e-els-borst-eilers",
+      "position_source": "https://www.parlement.com/biografie/dr-e-els-borst-eilers#p3"
+    },
+    {
+      "term_id": "drs-da-dick-benschop:1998-08-03",
+      "person_id": "drs-da-dick-benschop",
+      "government_position_nl": "Staatssecretaris van Buitenlandse Zaken",
+      "speaking_capacity": "State Secretary for Foreign Affairs",
+      "government_position_start": "1998-08-03",
+      "government_position_end": "2002-07-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-da-dick-benschop",
+      "position_source": "https://www.parlement.com/biografie/drs-da-dick-benschop#p3"
+    },
+    {
+      "term_id": "dr-w-wim-kok:1994-08-22",
+      "person_id": "dr-w-wim-kok",
+      "government_position_nl": "Minister-president en minister van Algemene Zaken",
+      "speaking_capacity": "Prime Minister and Minister of General Affairs",
+      "government_position_start": "1994-08-22",
+      "government_position_end": "2002-07-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-w-wim-kok",
+      "position_source": "https://www.parlement.com/biografie/dr-w-wim-kok#p3"
+    },
+    {
+      "term_id": "t-tineke-netelenbos:1998-08-03",
+      "person_id": "t-tineke-netelenbos",
+      "government_position_nl": "Minister van Verkeer en Waterstaat",
+      "speaking_capacity": "Minister of Transport and Water Management",
+      "government_position_start": "1998-08-03",
+      "government_position_end": "2002-07-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/t-tineke-netelenbos",
+      "position_source": "https://www.parlement.com/biografie/t-tineke-netelenbos#p3"
+    },
+    {
+      "term_id": "mr-jph-piet-hein-donner:2002-07-22",
+      "person_id": "mr-jph-piet-hein-donner",
+      "government_position_nl": "Minister van Justitie",
+      "speaking_capacity": "Minister of Justice",
+      "government_position_start": "2002-07-22",
+      "government_position_end": "2006-09-21",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-jph-piet-hein-donner",
+      "position_source": "https://www.parlement.com/biografie/mr-jph-piet-hein-donner#p3"
+    },
+    {
+      "term_id": "profdr-jp-jan-peter-balkenende:2002-07-22",
+      "person_id": "profdr-jp-jan-peter-balkenende",
+      "government_position_nl": "Minister-president en minister van Algemene Zaken",
+      "speaking_capacity": "Prime Minister and Minister of General Affairs",
+      "government_position_start": "2002-07-22",
+      "government_position_end": "2010-10-14",
+      "government_metadata_source": "https://www.parlement.com/biografie/profdr-jp-jan-peter-balkenende",
+      "position_source": "https://www.parlement.com/biografie/profdr-jp-jan-peter-balkenende#p3"
+    },
+    {
+      "term_id": "hgj-henk-kamp:2002-12-12",
+      "person_id": "hgj-henk-kamp",
+      "government_position_nl": "Minister van Defensie",
+      "speaking_capacity": "Minister of Defence",
+      "government_position_start": "2002-12-12",
+      "government_position_end": "2007-02-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/hgj-henk-kamp",
+      "position_source": "https://www.parlement.com/biografie/hgj-henk-kamp#p3"
+    },
+    {
+      "term_id": "ir-ceg-karien-van-gennip:2003-05-27",
+      "person_id": "ir-ceg-karien-van-gennip",
+      "government_position_nl": "Staatssecretaris van Economische Zaken",
+      "speaking_capacity": "State Secretary for Economic Affairs",
+      "government_position_start": "2003-05-27",
+      "government_position_end": "2007-02-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/ir-ceg-karien-van-gennip",
+      "position_source": "https://www.parlement.com/biografie/ir-ceg-karien-van-gennip#p3"
+    },
+    {
+      "term_id": "dr-g-gerrit-zalm:2003-05-27",
+      "person_id": "dr-g-gerrit-zalm",
+      "government_position_nl": "Minister van Financiën",
+      "speaking_capacity": "Minister of Finance",
+      "government_position_start": "2003-05-27",
+      "government_position_end": "2007-02-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-g-gerrit-zalm",
+      "position_source": "https://www.parlement.com/biografie/dr-g-gerrit-zalm#p3"
+    },
+    {
+      "term_id": "dr-cp-cees-veerman:2003-07-01",
+      "person_id": "dr-cp-cees-veerman",
+      "government_position_nl": "Minister van Landbouw, Natuur en Voedselkwaliteit",
+      "speaking_capacity": "Minister of Agriculture, Nature and Food Quality",
+      "government_position_start": "2003-07-01",
+      "government_position_end": "2007-02-22",
+      "government_metadata_source": "https://www.parlement.com/biografie/dr-cp-cees-veerman",
+      "position_source": "https://www.parlement.com/biografie/dr-cp-cees-veerman#p3"
+    },
+    {
+      "term_id": "drs-m-mark-rutte:2010-10-14",
+      "person_id": "drs-m-mark-rutte",
+      "government_position_nl": "Minister-president en minister van Algemene Zaken",
+      "speaking_capacity": "Prime Minister and Minister of General Affairs",
+      "government_position_start": "2010-10-14",
+      "government_position_end": "2024-07-02",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-m-mark-rutte",
+      "position_source": "https://www.parlement.com/biografie/drs-m-mark-rutte#p3"
+    },
+    {
+      "term_id": "ja-jeanine-hennis-plasschaert:2012-11-05",
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "government_position_nl": "Minister van Defensie",
+      "speaking_capacity": "Minister of Defence",
+      "government_position_start": "2012-11-05",
+      "government_position_end": "2017-10-04",
+      "government_metadata_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert",
+      "position_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert#p3"
+    },
+    {
+      "term_id": "ir-ed-eric-wiebes:2014-02-04",
+      "person_id": "ir-ed-eric-wiebes",
+      "government_position_nl": "Staatssecretaris van Financiën",
+      "speaking_capacity": "State Secretary for Finance",
+      "government_position_start": "2014-02-04",
+      "government_position_end": "2017-10-26",
+      "government_metadata_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes",
+      "position_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes#p3"
+    },
+    {
+      "term_id": "ir-ed-eric-wiebes:2017-10-26",
+      "person_id": "ir-ed-eric-wiebes",
+      "government_position_nl": "Minister van Economische Zaken en Klimaat",
+      "speaking_capacity": "Minister of Economic Affairs and Climate Policy",
+      "government_position_start": "2017-10-26",
+      "government_position_end": "2021-01-15",
+      "government_metadata_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes",
+      "position_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes#p3"
+    },
+    {
+      "term_id": "profdr-m-jet-bussemaker:2012-11-05",
+      "person_id": "profdr-m-jet-bussemaker",
+      "government_position_nl": "Minister van Onderwijs, Cultuur en Wetenschap",
+      "speaking_capacity": "Minister of Education, Culture and Science",
+      "government_position_start": "2012-11-05",
+      "government_position_end": "2017-10-26",
+      "government_metadata_source": "https://www.parlement.com/biografie/profdr-m-jet-bussemaker",
+      "position_source": "https://www.parlement.com/biografie/profdr-m-jet-bussemaker#p3"
+    },
+    {
+      "term_id": "drs-sa-stef-blok:2012-11-05",
+      "person_id": "drs-sa-stef-blok",
+      "government_position_nl": "Minister voor Wonen en Rijksdienst",
+      "speaking_capacity": "Minister for Housing and the Central Government Sector",
+      "government_position_start": "2012-11-05",
+      "government_position_end": "2017-01-27",
+      "government_metadata_source": "https://www.parlement.com/biografie/drs-sa-stef-blok",
+      "position_source": "https://www.parlement.com/biografie/drs-sa-stef-blok#p3"
+    },
+    {
+      "term_id": "mr-wb-wopke-hoekstra:2022-01-10",
+      "person_id": "mr-wb-wopke-hoekstra",
+      "government_position_nl": "Minister van Buitenlandse Zaken",
+      "speaking_capacity": "Minister of Foreign Affairs",
+      "government_position_start": "2022-01-10",
+      "government_position_end": "2023-08-31",
+      "government_metadata_source": "https://www.parlement.com/biografie/mr-wb-wopke-hoekstra",
+      "position_source": "https://www.parlement.com/biografie/mr-wb-wopke-hoekstra#p3"
+    }
+  ],
+  "speeches": [
+    {
+      "speech_id": "nl.proc.sgd.d.195119520000749.2.2",
+      "person_id": "mr-h-henk-mulderije",
+      "term_id": "mr-h-henk-mulderije:1951-03-15",
+      "expected": {
+        "date": "1952-03-12",
+        "speaker": "Henk Mulderije",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.chu",
+        "speaking_capacity": "Minister of Justice",
+        "government_position_nl": "Minister van Justitie",
+        "government_position_start": "1951-03-15",
+        "government_position_end": "1952-09-02",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-h-henk-mulderije"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.195519560002069.2.2",
+      "person_id": "jg-ko-suurhoff",
+      "term_id": "jg-ko-suurhoff:1952-09-02",
+      "expected": {
+        "date": "1955-12-09",
+        "speaker": "Ko Suurhoff",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Social Affairs and Public Health",
+        "government_position_nl": "Minister van Sociale Zaken en Volksgezondheid",
+        "government_position_start": "1952-09-02",
+        "government_position_end": "1958-12-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/jg-ko-suurhoff"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.195519560002070.2.28",
+      "person_id": "jg-ko-suurhoff",
+      "term_id": "jg-ko-suurhoff:1952-09-02",
+      "expected": {
+        "date": "1955-12-13",
+        "speaker": "Ko Suurhoff",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Social Affairs and Public Health",
+        "government_position_nl": "Minister van Sociale Zaken en Volksgezondheid",
+        "government_position_start": "1952-09-02",
+        "government_position_end": "1958-12-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/jg-ko-suurhoff"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.195719580002367.2.43",
+      "person_id": "jg-ko-suurhoff",
+      "term_id": "jg-ko-suurhoff:1952-09-02",
+      "expected": {
+        "date": "1957-11-28",
+        "speaker": "Ko Suurhoff",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Social Affairs and Public Health",
+        "government_position_nl": "Minister van Sociale Zaken en Volksgezondheid",
+        "government_position_start": "1952-09-02",
+        "government_position_end": "1958-12-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/jg-ko-suurhoff"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.195919600000218.3.9",
+      "person_id": "pjs-piet-de-jong",
+      "term_id": "pjs-piet-de-jong:1959-06-25",
+      "expected": {
+        "date": "1959-12-10",
+        "speaker": "Piet de Jong",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.kvp",
+        "speaking_capacity": "State Secretary for Defence",
+        "government_position_nl": "Staatssecretaris van Defensie",
+        "government_position_start": "1959-06-25",
+        "government_position_end": "1963-07-24",
+        "government_metadata_source": "https://www.parlement.com/biografie/pjs-piet-de-jong"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.196219630002155.4.21",
+      "person_id": "mr-vgm-victor-marijnen",
+      "term_id": "mr-vgm-victor-marijnen:1959-05-19",
+      "expected": {
+        "date": "1963-03-06",
+        "speaker": "Victor Marijnen",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.kvp",
+        "speaking_capacity": "Minister of Agriculture and Fisheries",
+        "government_position_nl": "Minister van Landbouw en Visserij",
+        "government_position_start": "1959-05-19",
+        "government_position_end": "1963-07-24",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-vgm-victor-marijnen"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.196419650000782.5.6",
+      "person_id": "mr-y-ynso-scholten",
+      "term_id": "mr-y-ynso-scholten:1963-07-24",
+      "expected": {
+        "date": "1965-02-23",
+        "speaker": "Ynso Scholten",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": "Minister of Justice"
+      },
+      "updates": {
+        "party_ref": "nl.p.chu",
+        "speaking_capacity": "Minister of Justice",
+        "government_position_nl": "Minister van Justitie",
+        "government_position_start": "1963-07-24",
+        "government_position_end": "1965-04-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-y-ynso-scholten"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.196519660000832.6.9",
+      "person_id": "dr-ia-isaac-diepenhorst",
+      "term_id": "dr-ia-isaac-diepenhorst:1965-04-14",
+      "expected": {
+        "date": "1966-03-31",
+        "speaker": "Isaäc Diepenhorst",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.arp",
+        "speaking_capacity": "Minister of Education and Sciences",
+        "government_position_nl": "Minister van Onderwijs en Wetenschappen",
+        "government_position_start": "1965-04-14",
+        "government_position_end": "1967-04-05",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-ia-isaac-diepenhorst"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.196719680000641.4.78",
+      "person_id": "ir-pj-pierre-lardinois",
+      "term_id": "ir-pj-pierre-lardinois:1967-04-05",
+      "expected": {
+        "date": "1968-01-31",
+        "speaker": "Pierre Lardinois",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.kvp",
+        "speaking_capacity": "Minister of Agriculture and Fisheries",
+        "government_position_nl": "Minister van Landbouw en Visserij",
+        "government_position_start": "1967-04-05",
+        "government_position_end": "1973-01-01",
+        "government_metadata_source": "https://www.parlement.com/biografie/ir-pj-pierre-lardinois"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.196819690000711.6.2",
+      "person_id": "mr-chf-carel-polak",
+      "term_id": "mr-chf-carel-polak:1967-04-05",
+      "expected": {
+        "date": "1968-09-24",
+        "speaker": "Carel Polak",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": "Minister of Justice"
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Justice",
+        "government_position_nl": "Minister van Justitie",
+        "government_position_start": "1967-04-05",
+        "government_position_end": "1971-07-06",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-chf-carel-polak"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.196919700000592.6.90",
+      "person_id": "mr-hkj-henk-beernink",
+      "term_id": "mr-hkj-henk-beernink:1967-04-05",
+      "expected": {
+        "date": "1969-10-29",
+        "speaker": "Henk Beernink",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.chu",
+        "speaking_capacity": "Minister of the Interior",
+        "government_position_nl": "Minister van Binnenlandse Zaken",
+        "government_position_start": "1967-04-05",
+        "government_position_end": "1971-07-06",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-hkj-henk-beernink"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197219730000464.2.4",
+      "person_id": "mr-w-willem-scholten",
+      "term_id": "mr-w-willem-scholten:1971-07-14",
+      "expected": {
+        "date": "1973-01-24",
+        "speaker": "Willem Scholten",
+        "role": "government",
+        "party_ref": "nl.p.chu",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.chu",
+        "speaking_capacity": "State Secretary for Finance",
+        "government_position_nl": "Staatssecretaris van Financiën",
+        "government_position_start": "1971-07-14",
+        "government_position_end": "1973-03-19",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-w-willem-scholten"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197419750000644.8.311",
+      "person_id": "jln-jan-schaefer",
+      "term_id": "jln-jan-schaefer:1973-05-11",
+      "expected": {
+        "date": "1974-12-17",
+        "speaker": "Jan Schaefer",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "State Secretary for Housing and Spatial Planning",
+        "government_position_nl": "Staatssecretaris van Volkshuisvesting en Ruimtelijke Ordening",
+        "government_position_start": "1973-05-11",
+        "government_position_end": "1977-09-08",
+        "government_metadata_source": "https://www.parlement.com/biografie/jln-jan-schaefer"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197519760000604.2.19.7",
+      "person_id": "mr-hw-harry-van-doorn",
+      "term_id": "mr-hw-harry-van-doorn:1973-05-11",
+      "expected": {
+        "date": "1975-11-19",
+        "speaker": "Harry van Doorn",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.ppr",
+        "speaking_capacity": "Minister of Culture, Recreation and Social Work",
+        "government_position_nl": "Minister van Cultuur, Recreatie en Maatschappelijk Werk",
+        "government_position_start": "1973-05-11",
+        "government_position_end": "1977-12-19",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-hw-harry-van-doorn"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197519760000706.1.18.1",
+      "person_id": "dr-mhm-michel-van-hulten",
+      "term_id": "dr-mhm-michel-van-hulten:1973-05-11",
+      "expected": {
+        "date": "1976-02-23",
+        "speaker": "Michel van Hulten",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.ppr",
+        "speaking_capacity": "State Secretary for Transport and Water Management",
+        "government_position_nl": "Staatssecretaris van Verkeer en Waterstaat",
+        "government_position_start": "1973-05-11",
+        "government_position_end": "1977-12-19",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-mhm-michel-van-hulten"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197519760000674.7.15.5",
+      "person_id": "mr-hw-harry-van-doorn",
+      "term_id": "mr-hw-harry-van-doorn:1973-05-11",
+      "expected": {
+        "date": "1976-06-17",
+        "speaker": "Harry van Doorn",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.ppr",
+        "speaking_capacity": "Minister of Culture, Recreation and Social Work",
+        "government_position_nl": "Minister van Cultuur, Recreatie en Maatschappelijk Werk",
+        "government_position_start": "1973-05-11",
+        "government_position_end": "1977-12-19",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-hw-harry-van-doorn"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197519760000674.7.9.9",
+      "person_id": "mr-hw-harry-van-doorn",
+      "term_id": "mr-hw-harry-van-doorn:1973-05-11",
+      "expected": {
+        "date": "1976-06-17",
+        "speaker": "Harry van Doorn",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.ppr",
+        "speaking_capacity": "Minister of Culture, Recreation and Social Work",
+        "government_position_nl": "Minister van Cultuur, Recreatie en Maatschappelijk Werk",
+        "government_position_start": "1973-05-11",
+        "government_position_end": "1977-12-19",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-hw-harry-van-doorn"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.19770000078.4.2.7",
+      "person_id": "mr-hw-harry-van-doorn",
+      "term_id": "mr-hw-harry-van-doorn:1973-05-11",
+      "expected": {
+        "date": "1977-08-24",
+        "speaker": "Harry van Doorn",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.ppr",
+        "speaking_capacity": "Minister of Culture, Recreation and Social Work",
+        "government_position_nl": "Minister van Cultuur, Recreatie en Maatschappelijk Werk",
+        "government_position_start": "1973-05-11",
+        "government_position_end": "1977-12-19",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-hw-harry-van-doorn"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.197919800000789.1.7.33",
+      "person_id": "dr-cha-chris-van-der-klaauw",
+      "term_id": "dr-cha-chris-van-der-klaauw:1977-12-19",
+      "expected": {
+        "date": "1980-09-15",
+        "speaker": "Chris van der Klaauw",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Foreign Affairs",
+        "government_position_nl": "Minister van Buitenlandse Zaken",
+        "government_position_start": "1977-12-19",
+        "government_position_end": "1981-09-11",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-cha-chris-van-der-klaauw"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198219830000817.2.13.66",
+      "person_id": "mr-annelien-kappeyne-van-de-coppello",
+      "term_id": "mr-annelien-kappeyne-van-de-coppello:1982-11-08",
+      "expected": {
+        "date": "1983-01-31",
+        "speaker": "Annelien Kappeyne van de Coppello",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Social Affairs and Employment",
+        "government_position_nl": "Staatssecretaris van Sociale Zaken en Werkgelegenheid",
+        "government_position_start": "1982-11-08",
+        "government_position_end": "1986-07-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-annelien-kappeyne-van-de-coppello"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198219830000746.4.12.57",
+      "person_id": "drs-gmv-gijs-van-aardenne",
+      "term_id": "drs-gmv-gijs-van-aardenne:1982-11-04",
+      "expected": {
+        "date": "1983-02-09",
+        "speaker": "Gijs van Aardenne",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Economic Affairs",
+        "government_position_nl": "Minister van Economische Zaken",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1986-07-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198319840000888.2.11.18",
+      "person_id": "mr-gph-gerrit-brokx",
+      "term_id": "mr-gph-gerrit-brokx:1982-11-05",
+      "expected": {
+        "date": "1983-11-23",
+        "speaker": "Gerrit Brokx",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "State Secretary for Housing, Spatial Planning and the Environment",
+        "government_position_nl": "Staatssecretaris van Volkshuisvesting, Ruimtelijke Ordening en Milieubeheer",
+        "government_position_start": "1982-11-05",
+        "government_position_end": "1986-10-23",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-gph-gerrit-brokx"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198419850001005.3.12.1",
+      "person_id": "dr-wf-wim-van-eekelen",
+      "term_id": "dr-wf-wim-van-eekelen:1982-11-05",
+      "expected": {
+        "date": "1985-08-27",
+        "speaker": "Wim van Eekelen",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Foreign Affairs",
+        "government_position_nl": "Staatssecretaris van Buitenlandse Zaken",
+        "government_position_start": "1982-11-05",
+        "government_position_end": "1986-07-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-wf-wim-van-eekelen"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198519860000868.2.10.1",
+      "person_id": "drs-gmv-gijs-van-aardenne",
+      "term_id": "drs-gmv-gijs-van-aardenne:1982-11-04",
+      "expected": {
+        "date": "1985-11-04",
+        "speaker": "Gijs van Aardenne",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Economic Affairs",
+        "government_position_nl": "Minister van Economische Zaken",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1986-07-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198519860000868.2.35.20",
+      "person_id": "drs-gmv-gijs-van-aardenne",
+      "term_id": "drs-gmv-gijs-van-aardenne:1982-11-04",
+      "expected": {
+        "date": "1985-11-04",
+        "speaker": "Gijs van Aardenne",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Economic Affairs",
+        "government_position_nl": "Minister van Economische Zaken",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1986-07-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198519860000875.2.8.7",
+      "person_id": "drs-gmv-gijs-van-aardenne",
+      "term_id": "drs-gmv-gijs-van-aardenne:1982-11-04",
+      "expected": {
+        "date": "1985-11-14",
+        "speaker": "Gijs van Aardenne",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Economic Affairs",
+        "government_position_nl": "Minister van Economische Zaken",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1986-07-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-gmv-gijs-van-aardenne"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198519860000888.2.7.1",
+      "person_id": "mrdrs-lc-elco-brinkman",
+      "term_id": "mrdrs-lc-elco-brinkman:1982-11-04",
+      "expected": {
+        "date": "1985-12-09",
+        "speaker": "Elco Brinkman",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Welfare, Public Health and Culture",
+        "government_position_nl": "Minister van Welzijn, Volksgezondheid en Cultuur",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1989-11-07",
+        "government_metadata_source": "https://www.parlement.com/biografie/mrdrs-lc-elco-brinkman"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198519860000897.2.5.7",
+      "person_id": "mrdrs-lc-elco-brinkman",
+      "term_id": "mrdrs-lc-elco-brinkman:1982-11-04",
+      "expected": {
+        "date": "1986-02-10",
+        "speaker": "Elco Brinkman",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Welfare, Public Health and Culture",
+        "government_position_nl": "Minister van Welzijn, Volksgezondheid en Cultuur",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1989-11-07",
+        "government_metadata_source": "https://www.parlement.com/biografie/mrdrs-lc-elco-brinkman"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198719880000815.4.2.1",
+      "person_id": "drs-djd-dick-dees",
+      "term_id": "drs-djd-dick-dees:1986-07-14",
+      "expected": {
+        "date": "1988-03-03",
+        "speaker": "Dick Dees",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Welfare, Public Health and Culture",
+        "government_position_nl": "Staatssecretaris van Welzijn, Volksgezondheid en Cultuur",
+        "government_position_start": "1986-07-14",
+        "government_position_end": "1989-11-07",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-djd-dick-dees"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198819890000870.5.9.47",
+      "person_id": "drs-ehthm-ed-nijpels",
+      "term_id": "drs-ehthm-ed-nijpels:1986-07-14",
+      "expected": {
+        "date": "1988-11-03",
+        "speaker": "Ed Nijpels",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Housing, Spatial Planning and the Environment",
+        "government_position_nl": "Minister van Volkshuisvesting, Ruimtelijke Ordening en Milieubeheer",
+        "government_position_start": "1986-07-14",
+        "government_position_end": "1989-11-07",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-ehthm-ed-nijpels"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198819890000881.2.3.11",
+      "person_id": "mr-he-henk-koning",
+      "term_id": "mr-he-henk-koning:1982-11-05",
+      "expected": {
+        "date": "1988-11-30",
+        "speaker": "Henk Koning",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Finance",
+        "government_position_nl": "Staatssecretaris van Financiën",
+        "government_position_start": "1982-11-05",
+        "government_position_end": "1989-11-07",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-he-henk-koning"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198819890000904.5.8.9",
+      "person_id": "mr-f-frits-korthals-altes",
+      "term_id": "mr-f-frits-korthals-altes:1982-11-04",
+      "expected": {
+        "date": "1989-02-23",
+        "speaker": "Frits Korthals Altes",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Justice",
+        "government_position_nl": "Minister van Justitie",
+        "government_position_start": "1982-11-04",
+        "government_position_end": "1989-11-07",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-f-frits-korthals-altes"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.198919900000901.2.10.1",
+      "person_id": "drs-ci-ien-dales",
+      "term_id": "drs-ci-ien-dales:1989-11-07",
+      "expected": {
+        "date": "1990-03-19",
+        "speaker": "Ien Dales",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of the Interior",
+        "government_position_nl": "Minister van Binnenlandse Zaken",
+        "government_position_start": "1989-11-07",
+        "government_position_end": "1994-01-10",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-ci-ien-dales"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.199019910000793.6.6.1",
+      "person_id": "jrh-hanja-maij-weggen",
+      "term_id": "jrh-hanja-maij-weggen:1989-11-07",
+      "expected": {
+        "date": "1990-11-29",
+        "speaker": "Hanja Maij-Weggen",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Transport and Water Management",
+        "government_position_nl": "Minister van Verkeer en Waterstaat",
+        "government_position_start": "1989-11-07",
+        "government_position_end": "1994-07-16",
+        "government_metadata_source": "https://www.parlement.com/biografie/jrh-hanja-maij-weggen"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.199019910000842.6.5.4",
+      "person_id": "dr-je-koos-andriessen",
+      "term_id": "dr-je-koos-andriessen:1989-11-07",
+      "expected": {
+        "date": "1991-05-14",
+        "speaker": "Koos Andriessen",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Economic Affairs",
+        "government_position_nl": "Minister van Economische Zaken",
+        "government_position_start": "1989-11-07",
+        "government_position_end": "1994-08-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-je-koos-andriessen"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.199219930000844.3.2.93",
+      "person_id": "e-elske-ter-veld",
+      "term_id": "e-elske-ter-veld:1989-11-07",
+      "expected": {
+        "date": "1993-01-28",
+        "speaker": "Elske ter Veld",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "State Secretary for Social Affairs and Employment",
+        "government_position_nl": "Staatssecretaris van Sociale Zaken en Werkgelegenheid",
+        "government_position_start": "1989-11-07",
+        "government_position_end": "1993-06-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/e-elske-ter-veld"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.199219930000844.3.2.95",
+      "person_id": "e-elske-ter-veld",
+      "term_id": "e-elske-ter-veld:1989-11-07",
+      "expected": {
+        "date": "1993-01-28",
+        "speaker": "Elske ter Veld",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "State Secretary for Social Affairs and Employment",
+        "government_position_nl": "Staatssecretaris van Sociale Zaken en Werkgelegenheid",
+        "government_position_start": "1989-11-07",
+        "government_position_end": "1993-06-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/e-elske-ter-veld"
+      }
+    },
+    {
+      "speech_id": "nl.proc.sgd.d.199319940001090.4.2.1",
+      "person_id": "drir-jmm-jo-ritzen",
+      "term_id": "drir-jmm-jo-ritzen:1989-11-07",
+      "expected": {
+        "date": "1993-10-06",
+        "speaker": "Jo Ritzen",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Education and Sciences",
+        "government_position_nl": "Minister van Onderwijs en Wetenschappen",
+        "government_position_start": "1989-11-07",
+        "government_position_end": "1994-08-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/drir-jmm-jo-ritzen"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19951996-23-1560-1620.1.9.26",
+      "person_id": "mr-m-michiel-patijn",
+      "term_id": "mr-m-michiel-patijn:1994-08-22",
+      "expected": {
+        "date": "1995-11-08",
+        "speaker": "Michiel Patijn",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Foreign Affairs",
+        "government_position_nl": "Staatssecretaris van Buitenlandse Zaken",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "1998-08-03",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-m-michiel-patijn"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19971998-474-487.1.7.3",
+      "person_id": "mr-ema-elizabeth-schmitz",
+      "term_id": "mr-ema-elizabeth-schmitz:1994-08-22",
+      "expected": {
+        "date": "1997-10-01",
+        "speaker": "Elizabeth Schmitz",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "State Secretary for Justice",
+        "government_position_nl": "Staatssecretaris van Justitie",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "1998-08-03",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-ema-elizabeth-schmitz"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19961997-1824-1893.1.7.8",
+      "person_id": "drir-jmm-jo-ritzen",
+      "term_id": "drir-jmm-jo-ritzen:1994-08-22",
+      "expected": {
+        "date": "1997-11-13",
+        "speaker": "Jo Ritzen",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Education, Culture and Sciences",
+        "government_position_nl": "Minister van Onderwijs, Cultuur en Wetenschappen",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "1998-08-03",
+        "government_metadata_source": "https://www.parlement.com/biografie/drir-jmm-jo-ritzen"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19961997-1824-1893.1.9.22",
+      "person_id": "drs-aad-nuis",
+      "term_id": "drs-aad-nuis:1994-08-22",
+      "expected": {
+        "date": "1997-11-13",
+        "speaker": "Aad Nuis",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.d66",
+        "speaking_capacity": "State Secretary for Education, Culture and Sciences",
+        "government_position_nl": "Staatssecretaris van Onderwijs, Cultuur en Wetenschappen",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "1998-08-03",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-aad-nuis"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19961997-1824-1893.1.9.24",
+      "person_id": "drs-aad-nuis",
+      "term_id": "drs-aad-nuis:1994-08-22",
+      "expected": {
+        "date": "1997-11-13",
+        "speaker": "Aad Nuis",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.d66",
+        "speaking_capacity": "State Secretary for Education, Culture and Sciences",
+        "government_position_nl": "Staatssecretaris van Onderwijs, Cultuur en Wetenschappen",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "1998-08-03",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-aad-nuis"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19981999-2152-2171.1.8.1",
+      "person_id": "dr-e-els-borst-eilers",
+      "term_id": "dr-e-els-borst-eilers:1994-08-22",
+      "expected": {
+        "date": "1998-11-26",
+        "speaker": "Els Borst-Eilers",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.d66",
+        "speaking_capacity": "Minister of Health, Welfare and Sport",
+        "government_position_nl": "Minister van Volksgezondheid, Welzijn en Sport",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "2002-07-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-e-els-borst-eilers"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19981999-2375-2426.1.6.57",
+      "person_id": "drs-da-dick-benschop",
+      "term_id": "drs-da-dick-benschop:1998-08-03",
+      "expected": {
+        "date": "1998-12-03",
+        "speaker": "Dick Benschop",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "State Secretary for Foreign Affairs",
+        "government_position_nl": "Staatssecretaris van Buitenlandse Zaken",
+        "government_position_start": "1998-08-03",
+        "government_position_end": "2002-07-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-da-dick-benschop"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19992000-109-154.1.20.1",
+      "person_id": "dr-w-wim-kok",
+      "term_id": "dr-w-wim-kok:1994-08-22",
+      "expected": {
+        "date": "1999-09-23",
+        "speaker": "Wim Kok",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Prime Minister and Minister of General Affairs",
+        "government_position_nl": "Minister-president en minister van Algemene Zaken",
+        "government_position_start": "1994-08-22",
+        "government_position_end": "2002-07-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-w-wim-kok"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-19992000-1311-1363.1.8.224",
+      "person_id": "t-tineke-netelenbos",
+      "term_id": "t-tineke-netelenbos:1998-08-03",
+      "expected": {
+        "date": "1999-11-04",
+        "speaker": "Tineke Netelenbos",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Transport and Water Management",
+        "government_position_nl": "Minister van Verkeer en Waterstaat",
+        "government_position_start": "1998-08-03",
+        "government_position_end": "2002-07-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/t-tineke-netelenbos"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20022003-3815-3859.1.7.95",
+      "person_id": "mr-jph-piet-hein-donner",
+      "term_id": "mr-jph-piet-hein-donner:2002-07-22",
+      "expected": {
+        "date": "2003-04-17",
+        "speaker": "Piet Hein Donner",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Justice",
+        "government_position_nl": "Minister van Justitie",
+        "government_position_start": "2002-07-22",
+        "government_position_end": "2006-09-21",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-jph-piet-hein-donner"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20052006-636-662.1.12.56",
+      "person_id": "profdr-jp-jan-peter-balkenende",
+      "term_id": "profdr-jp-jan-peter-balkenende:2002-07-22",
+      "expected": {
+        "date": "2005-10-12",
+        "speaker": "Jan Peter Balkenende",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Prime Minister and Minister of General Affairs",
+        "government_position_nl": "Minister-president en minister van Algemene Zaken",
+        "government_position_start": "2002-07-22",
+        "government_position_end": "2010-10-14",
+        "government_metadata_source": "https://www.parlement.com/biografie/profdr-jp-jan-peter-balkenende"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20052006-1482-1506.1.8.70",
+      "person_id": "hgj-henk-kamp",
+      "term_id": "hgj-henk-kamp:2002-12-12",
+      "expected": {
+        "date": "2005-11-17",
+        "speaker": "Henk Kamp",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2002-12-12",
+        "government_position_end": "2007-02-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/hgj-henk-kamp"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20062007-942-969.1.6.69",
+      "person_id": "hgj-henk-kamp",
+      "term_id": "hgj-henk-kamp:2002-12-12",
+      "expected": {
+        "date": "2006-10-18",
+        "speaker": "Henk Kamp",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2002-12-12",
+        "government_position_end": "2007-02-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/hgj-henk-kamp"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20062007-973-1000.1.17.3",
+      "person_id": "ir-ceg-karien-van-gennip",
+      "term_id": "ir-ceg-karien-van-gennip:2003-05-27",
+      "expected": {
+        "date": "2006-10-19",
+        "speaker": "Karien van Gennip",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "State Secretary for Economic Affairs",
+        "government_position_nl": "Staatssecretaris van Economische Zaken",
+        "government_position_start": "2003-05-27",
+        "government_position_end": "2007-02-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/ir-ceg-karien-van-gennip"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20062007-2317-2328.1.9.4",
+      "person_id": "dr-g-gerrit-zalm",
+      "term_id": "dr-g-gerrit-zalm:2003-05-27",
+      "expected": {
+        "date": "2007-01-31",
+        "speaker": "Gerrit Zalm",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Finance",
+        "government_position_nl": "Minister van Financiën",
+        "government_position_start": "2003-05-27",
+        "government_position_end": "2007-02-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-g-gerrit-zalm"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20062007-2369-2373.1.5.7",
+      "person_id": "dr-cp-cees-veerman",
+      "term_id": "dr-cp-cees-veerman:2003-07-01",
+      "expected": {
+        "date": "2007-02-06",
+        "speaker": "Cees Veerman",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Agriculture, Nature and Food Quality",
+        "government_position_nl": "Minister van Landbouw, Natuur en Voedselkwaliteit",
+        "government_position_start": "2003-07-01",
+        "government_position_end": "2007-02-22",
+        "government_metadata_source": "https://www.parlement.com/biografie/dr-cp-cees-veerman"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20102011-14-2.1.7.710",
+      "person_id": "drs-m-mark-rutte",
+      "term_id": "drs-m-mark-rutte:2010-10-14",
+      "expected": {
+        "date": "2010-10-27",
+        "speaker": "Mark Rutte",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Prime Minister and Minister of General Affairs",
+        "government_position_nl": "Minister-president en minister van Algemene Zaken",
+        "government_position_start": "2010-10-14",
+        "government_position_end": "2024-07-02",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-m-mark-rutte"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20142015-10-22.1.66.1",
+      "person_id": "drs-m-mark-rutte",
+      "term_id": "drs-m-mark-rutte:2010-10-14",
+      "expected": {
+        "date": "2014-10-07",
+        "speaker": "Mark Rutte",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Prime Minister and Minister of General Affairs",
+        "government_position_nl": "Minister-president en minister van Algemene Zaken",
+        "government_position_start": "2010-10-14",
+        "government_position_end": "2024-07-02",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-m-mark-rutte"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20142015-24-17.1.65.1",
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "term_id": "ja-jeanine-hennis-plasschaert:2012-11-05",
+      "expected": {
+        "date": "2014-11-13",
+        "speaker": "Jeanine Hennis-Plasschaert",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20142015-60-3.1.97.1",
+      "person_id": "ir-ed-eric-wiebes",
+      "term_id": "ir-ed-eric-wiebes:2014-02-04",
+      "expected": {
+        "date": "2015-03-05",
+        "speaker": "Eric Wiebes",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Finance",
+        "government_position_nl": "Staatssecretaris van Financiën",
+        "government_position_start": "2014-02-04",
+        "government_position_end": "2017-10-26",
+        "government_metadata_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20142015-90-21.1.285.1",
+      "person_id": "profdr-m-jet-bussemaker",
+      "term_id": "profdr-m-jet-bussemaker:2012-11-05",
+      "expected": {
+        "date": "2015-06-02",
+        "speaker": "Jet Bussemaker",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Education, Culture and Science",
+        "government_position_nl": "Minister van Onderwijs, Cultuur en Wetenschap",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-26",
+        "government_metadata_source": "https://www.parlement.com/biografie/profdr-m-jet-bussemaker"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20152016-7-28.1.40.1",
+      "person_id": "profdr-m-jet-bussemaker",
+      "term_id": "profdr-m-jet-bussemaker:2012-11-05",
+      "expected": {
+        "date": "2015-09-29",
+        "speaker": "Jet Bussemaker",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.pvda",
+        "speaking_capacity": "Minister of Education, Culture and Science",
+        "government_position_nl": "Minister van Onderwijs, Cultuur en Wetenschap",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-26",
+        "government_metadata_source": "https://www.parlement.com/biografie/profdr-m-jet-bussemaker"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20152016-24-6.1.22.1",
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "term_id": "ja-jeanine-hennis-plasschaert:2012-11-05",
+      "expected": {
+        "date": "2015-11-12",
+        "speaker": "Jeanine Hennis-Plasschaert",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20152016-36-9.1.70.1",
+      "person_id": "drs-sa-stef-blok",
+      "term_id": "drs-sa-stef-blok:2012-11-05",
+      "expected": {
+        "date": "2015-12-10",
+        "speaker": "Stef Blok",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister for Housing and the Central Government Sector",
+        "government_position_nl": "Minister voor Wonen en Rijksdienst",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-01-27",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-sa-stef-blok"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20152016-86-28.1.151.1",
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "term_id": "ja-jeanine-hennis-plasschaert:2012-11-05",
+      "expected": {
+        "date": "2016-05-24",
+        "speaker": "Jeanine Hennis-Plasschaert",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20152016-86-28.1.162.1",
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "term_id": "ja-jeanine-hennis-plasschaert:2012-11-05",
+      "expected": {
+        "date": "2016-05-24",
+        "speaker": "Jeanine Hennis-Plasschaert",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20152016-98-34.1.102.1",
+      "person_id": "ir-ed-eric-wiebes",
+      "term_id": "ir-ed-eric-wiebes:2014-02-04",
+      "expected": {
+        "date": "2016-06-21",
+        "speaker": "Eric Wiebes",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "State Secretary for Finance",
+        "government_position_nl": "Staatssecretaris van Financiën",
+        "government_position_start": "2014-02-04",
+        "government_position_end": "2017-10-26",
+        "government_metadata_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20162017-97-6.1.115.1",
+      "person_id": "ja-jeanine-hennis-plasschaert",
+      "term_id": "ja-jeanine-hennis-plasschaert:2012-11-05",
+      "expected": {
+        "date": "2017-07-06",
+        "speaker": "Jeanine Hennis-Plasschaert",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Defence",
+        "government_position_nl": "Minister van Defensie",
+        "government_position_start": "2012-11-05",
+        "government_position_end": "2017-10-04",
+        "government_metadata_source": "https://www.parlement.com/biografie/ja-jeanine-hennis-plasschaert"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20182019-69-26.1.93.1",
+      "person_id": "ir-ed-eric-wiebes",
+      "term_id": "ir-ed-eric-wiebes:2017-10-26",
+      "expected": {
+        "date": "2019-04-02",
+        "speaker": "Eric Wiebes",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Minister of Economic Affairs and Climate Policy",
+        "government_position_nl": "Minister van Economische Zaken en Klimaat",
+        "government_position_start": "2017-10-26",
+        "government_position_end": "2021-01-15",
+        "government_metadata_source": "https://www.parlement.com/biografie/ir-ed-eric-wiebes"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20192020-3-6.1.588.1",
+      "person_id": "drs-m-mark-rutte",
+      "term_id": "drs-m-mark-rutte:2010-10-14",
+      "expected": {
+        "date": "2019-09-19",
+        "speaker": "Mark Rutte",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Prime Minister and Minister of General Affairs",
+        "government_position_nl": "Minister-president en minister van Algemene Zaken",
+        "government_position_start": "2010-10-14",
+        "government_position_end": "2024-07-02",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-m-mark-rutte"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20192020-99-7.1.245.1",
+      "person_id": "drs-m-mark-rutte",
+      "term_id": "drs-m-mark-rutte:2010-10-14",
+      "expected": {
+        "date": "2020-09-09",
+        "speaker": "Mark Rutte",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.vvd",
+        "speaking_capacity": "Prime Minister and Minister of General Affairs",
+        "government_position_nl": "Minister-president en minister van Algemene Zaken",
+        "government_position_start": "2010-10-14",
+        "government_position_end": "2024-07-02",
+        "government_metadata_source": "https://www.parlement.com/biografie/drs-m-mark-rutte"
+      }
+    },
+    {
+      "speech_id": "nl.proc.ob.d.h-tk-20222023-27-3.1.187.1",
+      "person_id": "mr-wb-wopke-hoekstra",
+      "term_id": "mr-wb-wopke-hoekstra:2022-01-10",
+      "expected": {
+        "date": "2022-11-24",
+        "speaker": "Wopke Hoekstra",
+        "role": "government",
+        "party_ref": "NA",
+        "speaking_capacity": ""
+      },
+      "updates": {
+        "party_ref": "nl.p.cda",
+        "speaking_capacity": "Minister of Foreign Affairs",
+        "government_position_nl": "Minister van Buitenlandse Zaken",
+        "government_position_start": "2022-01-10",
+        "government_position_end": "2023-08-31",
+        "government_metadata_source": "https://www.parlement.com/biografie/mr-wb-wopke-hoekstra"
+      }
+    }
+  ]
+}

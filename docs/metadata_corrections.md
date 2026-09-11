@@ -2,6 +2,12 @@
 
 Reviewed and incorporated into the published CSV files on 11 September 2026.
 
+This page documents the initial identity and role repairs. The subsequent
+[government metadata review](government_metadata.md) supplies dated positions
+for all 70 government contributions and fills the 69 affiliations that remained
+missing after these repairs. The original correction ledger is retained as the
+record of the first review; the government ledger records the later enrichment.
+
 The initial ten contributions received corrections to speaker, role, party, member or
 function metadata. The review began with nine records whose missing party
 values caused the earlier dashboard to display them as government speakers.
@@ -94,11 +100,11 @@ this review added no further context, not that the speaker had no such capacity.
 | Visiting MEP | 0 | 1 |
 | **Total contributions** | **447** | **447** |
 
-Seven missing party affiliations are filled. All non-government contributions
-now have party metadata. The 70 government contributions include one with an
-already recorded CHU affiliation (Willem Scholten in 1973); 69 have no recorded
-party. Government role must therefore be determined from `role`, not inferred
-from missing party data.
+The initial review filled seven missing party affiliations. All non-government
+contributions then had party metadata. Of the 70 government contributions, one
+already recorded CHU affiliation (Willem Scholten in 1973), while 69 still had no
+party. Those 69 are filled in the subsequent government review. Government role
+must be determined from `role`, independently of party affiliation.
 
 The party table and figure are regenerated using the existing aggregation and
 minimum-five-contributions rule. Party metadata describes affiliation at the

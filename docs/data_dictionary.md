@@ -37,10 +37,13 @@ Key columns:
 - `symbolic_work_rationale`: rationale for SW code.
 - `symbolic_work_evidence`: short evidence excerpt.
 - `notes`: additional notes.
-- `speaking_capacity`: verified additional context where needed, such as speaking for a parliamentary committee. Blank means no additional context was added in this metadata review.
+- `speaking_capacity`: verified speaking context. For every government contribution, this is an English rendering of the ministerial or state-secretary portfolio held on the speech date. Existing committee and visiting-MEP context is retained. Blank elsewhere means no additional context was added.
+- `government_position_nl`: primary ministerial or state-secretary portfolio in Dutch, using the historic ministry name; blank for non-government contributions. This is not an exhaustive list of delegated duties or concurrent deputy-premier offices.
+- `government_position_start`, `government_position_end`: ISO dates of taking and leaving that portfolio, from Parlement.com. The review matches speech dates from the start date up to, but excluding, the departure date; none falls exactly on a departure date. A continuous term can span several cabinets.
+- `government_metadata_source`: Parlement.com biography used to verify the government speaker's affiliation and office. The review ledger records the specific party and career sections and preserves earlier values.
 - `parliamentary_group_as_recorded`: source group label where it needs to be distinguished from component-party affiliation (RPF/GPV for Van Middelkoop in 2000). Blank means no separate group label was added in this review.
 
-The CSV contains the corrected values directly. Original values, corrections and sources are recorded by speech ID in [`data/metadata/metadata_corrections.json`](../data/metadata/metadata_corrections.json), with a [human-readable audit](metadata_corrections.md). The [speaker registry](../data/metadata/speaker_profiles.json) records the reviewed identities and links, with a [complete link inventory](speaker_links.md). The original files remain available in Git history.
+The CSV contains the corrected values directly. Original values, corrections and sources are recorded by speech ID in [`data/metadata/metadata_corrections.json`](../data/metadata/metadata_corrections.json), with a [human-readable audit](metadata_corrections.md). The subsequent [government metadata review](government_metadata.md) fills 69 missing party affiliations and provides dated positions for all 70 government contributions; its [ledger](../data/metadata/government_metadata.json) preserves the previous values. The [speaker registry](../data/metadata/speaker_profiles.json) records the reviewed identities and links, with a [complete link inventory](speaker_links.md). The original files remain available in Git history.
 
 ## `data/candidate/df_ge_high.csv`
 
@@ -48,7 +51,9 @@ Candidate speeches retrieved by dictionary/embedding-assisted search before fina
 
 This file is useful for inspecting retrieval coverage and understanding the candidate pool from which the final analytic dataset was produced.
 
-The same eleven metadata corrections are applied here. Reviewed names and profile links are also copied to all 447 records that overlap the analytic sample. The remaining 125 records retain their existing names and have blank person/profile fields. Original and intermediate source labels are preserved for every row. This file uses the column name `function` where the analytic file uses `function.`. Retrieval scores, texts and candidate membership are unchanged.
+The same eleven metadata corrections are applied here. Reviewed names and profile links are also copied to all 447 records that overlap the analytic sample. The 70 overlapping government contributions receive the same verified party and office metadata. The remaining 125 records retain their existing metadata and have blank person/profile and government-review fields. Original and intermediate source labels are preserved for every row. This file uses the column name `function` where the analytic file uses `function.`. Retrieval scores, texts and candidate membership are unchanged.
+
+The validation-sample file `data/validation/df_ge_high_sample.csv` likewise receives the government metadata for its five matching contributions. Its 58 records and validation-related content remain unchanged.
 
 ## `data/validation/human_o3_validation_44.csv`
 
