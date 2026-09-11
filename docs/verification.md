@@ -22,15 +22,10 @@ validation files are unchanged. Only the party table and party figure changed
 among the reproduction outputs; the regenerated party figure was inspected.
 See the [metadata audit](metadata_corrections.md) for the sources and changes.
 
-The subsequent all-speaker biography review corrected Verbeek's 1984 role to
-`senator` in the analytic and candidate CSV files. The same preservation checks
-and default reproduction pass with eleven reviewed corrections. No analytical
-output changes result from this additional role correction.
-
 The later name synchronization writes reviewed names and profile links into
 all 447 analytic records and matching candidate/validation-sample records.
 Original labels are preserved in separate columns. The preservation checks
-also verify these name assignments and Verbeek's provisional-retention note.
+also verify these name assignments.
 All analytical outputs remain unchanged after this synchronization.
 
 ## Earlier verification, 2026-06-16

@@ -2,7 +2,7 @@
 
 ## Corpus
 
-The analysis focuses on Dutch Tweede Kamer parliamentary speech from 1945 to 2024. The published 447-contribution sample also contains one Eerste Kamer speech, identified in the September 2026 metadata review and retained provisionally at the researcher's request with an explicit `senator` role and scope note. The intended scope remains Tweede Kamer debate. The historical part of the corpus was based on the parliamentary speech dataset assembled by Marx et al. for 1945-2012. The recent part was constructed from official parliamentary proceedings available through `zoek.officielebekendmakingen.nl` for 2013-2024. The combined corpus contains approximately 3 million speeches after harmonising the metadata fields used in the analysis.
+The analysis focuses on Dutch Tweede Kamer parliamentary speech from 1945 to 2024. The historical part of the corpus was based on the parliamentary speech dataset assembled by Marx et al. for 1945-2012. The recent part was constructed from official parliamentary proceedings available through `zoek.officielebekendmakingen.nl` for 2013-2024. The combined corpus contains approximately 3 million speeches after harmonising the metadata fields used in the analysis.
 
 The raw full corpus is not included in this GitHub-ready folder. The final analytic and validation files needed for the default reproduction scripts are included under `data/`.
 

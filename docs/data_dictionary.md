@@ -12,7 +12,7 @@ Key columns:
 - `speaker_source_label`: corpus speaker label after the earlier OCR/attribution repairs, before expanding it to the reviewed name.
 - `speaker_person_id`: stable person identifier from the reviewed registry; use this to group contributions by person rather than by a shared surname or changing corpus member reference.
 - `speaker_profile_url`: reviewed Parlement.com biography link.
-- `sample_scope_note`: an explicit note for Jan Verbeek's Eerste Kamer contribution, retained provisionally despite the study's intended Tweede Kamer scope. Blank elsewhere; this does not replace the original coding notes or inclusion decision.
+- `sample_scope_note`: optional editorial note, currently blank for all contributions; separate from the original coding notes and inclusion decision.
 - `function.`: speaker function, with corrections documented in the metadata ledger.
 - `role`: speaking role: `mp` (Tweede Kamer member), `government`, `senator` (Eerste Kamer member), or `mep` (visiting Member of the European Parliament). This describes the contribution at its date, not all offices held by the speaker.
 - `party_ref`: party affiliation identifier, where recorded or verified. A missing party does not imply a government role. Affiliation does not necessarily identify the group on whose behalf a contribution is made; see the capacity and group fields.

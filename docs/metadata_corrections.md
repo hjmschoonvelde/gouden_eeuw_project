@@ -15,7 +15,7 @@ These were six MP contributions, two ministerial contributions and one visiting
 MEP contribution. A consistency check also found Asscher incorrectly recorded
 as government in June 2018, when he was an MP.
 
-## Corrected records
+## Selected corrected records
 
 The [machine-readable ledger](../data/metadata/metadata_corrections.json) contains
 exact speech IDs, original values, replacements, reasons and source locations.
@@ -33,29 +33,14 @@ names and Parlement.com links for all 447 analytic contributions; see the
 | 1965-02-23 | Scholten, Minister van Justitie | Ynso Scholten, Minister of Justice; change role to government and replace the incorrectly matched Willem Scholten biography | Source party field stays missing; personal CHU affiliation is separate | [Proceedings](https://resolver.kb.nl/resolve?urn=sgd:mpeg21:19641965:0000782:pdf); another ministerial reply in the debate supplies the member reference |
 | 1968-09-24 | Polak, Minister van Justitie | Carel Polak, Minister of Justice; change role to government and replace the incorrectly matched Henri Polak biography | Source party field stays missing; personal VVD affiliation is separate | [Proceedings](https://resolver.kb.nl/resolve?urn=sgd:mpeg21:19681969:0000711:pdf); adjacent ministerial replies supply the member reference |
 | 1974-02-12 | Van Veenen | Fia van Veenendaal-van Meggelen, MP; repair a split, OCR-damaged surname | DS'70 | [Scan](https://resolver.kb.nl/resolve?urn=sgd:mpeg21:19731974:0000729:pdf), printed p. 2436, PDF p. 34 |
-| 1984-05-01 | Verbeek | Jan Verbeek, VVD senator; change role to `senator`. This is an Eerste Kamer sitting | VVD, already recorded | [Scan](https://resolver.kb.nl/resolve?urn=sgd:mpeg21:19831984:0000028:pdf), printed p. 896, PDF p. 34; [biography](https://www.parlement.com/biografie/jw-jan-verbeek) |
 | 1996-10-10 | Van Middelkoop | Eimert van Middelkoop, MP, speaking for the parliamentary climate committee | GPV affiliation; this does not make the committee's argument a party position | [Proceedings](https://zoek.officielebekendmakingen.nl/h-tk-19961997-637-661.html) |
 | 2000-09-28 | Van Middelkoop | Eimert van Middelkoop, MP | GPV component-party affiliation; retain the source's joint group label **RPF/GPV** separately | [Proceedings](https://zoek.officielebekendmakingen.nl/h-tk-20002001-338-357.html) |
 | 2012-02-09 | Gerbrandy (EP/D66) | Gerben-Jan Gerbrandy, visiting MEP; separate role `mep` and replace the incorrectly matched Pieter Sjoerds Gerbrandy biography | D66 | [Proceedings](https://zoek.officielebekendmakingen.nl/h-tk-20112012-52-9.html), including the chair's introduction of visiting MEPs |
 | 2018-06-13 | Asscher | Lodewijk Asscher, MP; change role from government to MP | PvdA, already recorded | [Proceedings](https://zoek.officielebekendmakingen.nl/h-tk-20172018-93-4.html) |
 
-The subsequent review of every speaker biography identified Verbeek's 1984
-contribution as an Eerste Kamer speech. The scan confirms both his VVD
-maiden speech and the chamber. This eleventh correction adds `senator` as a
-distinct speaking role. The original `mp` count above reflects the source label,
-which did not correctly distinguish this contribution.
-
 The older XML references in the ledger identify the research corpus files in
 the parent project's `Data/` directory; they are not bundled in this repository.
 The official scan URLs and printed-page references provide public source access.
-
-Jan Verbeek's 1 May 1984 speech is outside the intended Tweede Kamer scope.
-The original text itself retains Eerste Kamer page footers, independently of
-the biography match. It is retained provisionally in the 447-contribution
-sample at the researcher's request, pending a separate scope decision. This
-does not expand the intended scope of the study. The row-level
-`sample_scope_note` makes the exception visible without changing the original
-inclusion decision, coding or speech text.
 
 ## Published data and analytical consequences
 
@@ -81,15 +66,12 @@ and validation-sample files receive the same values. Unreviewed records retain
 their existing names and have blank identity/link fields.
 
 `speaker_original` preserves the original corpus name; `speaker_source_label`
-preserves the name after the earlier OCR/attribution corrections. The
-`sample_scope_note` documents Verbeek's provisional retention separately from
-the original model-generated notes and inclusion decision.
+preserves the name after the earlier OCR/attribution corrections.
 
 The initial analytic and candidate repairs add two metadata columns: `speaking_capacity`
 and `parliamentary_group_as_recorded`. These preserve Van Middelkoop's committee
 role in 1996, the joint RPF/GPV group label in 2000, the two ministers' speaking
-capacity, Gerbrandy's participation as a visiting MEP, and Verbeek's
-Eerste Kamer contribution. Blank cells mean that
+capacity and Gerbrandy's participation as a visiting MEP. Blank cells mean that
 this review added no further context, not that the speaker had no such capacity.
 
 | Speaking role | Before | After |
@@ -120,9 +102,7 @@ now meet the existing minimum-five-contributions threshold for the party figure.
 All original speech IDs, dates, texts, retrieval scores, inclusion decisions,
 rationales and TG/SW assignments are retained. The annual counts, joint coding
 matrix, period summaries and validation metrics are consequently unchanged.
-The residual SW5 category remains included. Gerbrandy's MEP contribution and Verbeek's Eerste Kamer speech both
-remain included; removing either would be a separate change to the analytical
-sample, not a metadata correction.
+The residual SW5 category remains included.
 
 ## Source and reproduction notes
 

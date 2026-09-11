@@ -127,7 +127,7 @@ def run(baseline):
     assert len({r["speaker_person_id"] for r in final}) == 244
     retained = next(r for r in final if r["role"] == "senator")
     assert retained["speaker"] == "Jan Verbeek" and retained["include_for_coding"] == "TRUE"
-    assert "retained provisionally" in retained["sample_scope_note"]
+    assert retained["sample_scope_note"] == retained["speaking_capacity"] == ""
     assert all(r["party_ref"] not in ("", "NA") for r in final)
     gov_rows = [row for row in final if row["role"] == "government"]
     assert Counter(row["party_ref"] for row in gov_rows) == {

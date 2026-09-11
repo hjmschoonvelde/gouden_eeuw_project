@@ -19,7 +19,7 @@ Office dates are recorded as ISO dates: start inclusive, departure exclusive. No
 - The analytic CSV receives all 70 assignments; the candidate pool receives the same 70 by speech ID.
 - The validation-sample CSV receives the same metadata for its five overlapping government contributions. Other candidate/sample records retain their existing cells.
 - New fields are `government_position_nl`, `government_position_start`, `government_position_end` and `government_metadata_source`; the existing `party_ref` and `speaking_capacity` fields are enriched.
-- Speech IDs, dates, texts, evidence, names, role, retrieval scores, inclusion decisions, coding, ordering and Verbeek's provisional scope note are unchanged. The human/model validation datasets are unchanged.
+- Speech IDs, dates, texts, evidence, names, role, retrieval scores, inclusion decisions, coding and ordering are unchanged. The human/model validation datasets are unchanged.
 - The existing party summary and party figure are regenerated from the enriched affiliations, with the existing aggregation and minimum-five-contributions rule. Annual counts, the TG/SW matrix, period summaries and validation metrics are unchanged.
 
 ```sh
