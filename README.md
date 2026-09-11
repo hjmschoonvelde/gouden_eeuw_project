@@ -67,8 +67,6 @@ The optional API annotation workflow is off by default. To run it:
 RUN_OPENAI_ANNOTATION=true OPENAI_API_KEY=... Rscript scripts/03_run_llm_annotation_optional.R
 ```
 
-Do not store API keys in this repository.
-
 ## Software
 
 The default scripts require R and these packages: `dplyr`, `ggplot2`, `readr`, and `tidyr`. Optional workflows additionally use `data.table`, `ellmer`, `jsonlite`, `quanteda`, `quanteda.textstats`, `stringr`, and `word2vec`.
