@@ -7,7 +7,7 @@ Stefan Couperus and Martijn Schoonvelde
 
 Forthcoming in (fall 2026): K. Pettersson, K. Eriksson, & M. Menke (Eds.), Revived Futures: The Turn to the Past in European Party Politics Palgrave Macmillan.
 
-The chapter studies how Dutch MPs use "Gouden Eeuw" language as a mnemonic trope in parliamentary speech. The workflow combines dictionary and embedding-assisted retrieval with human validation and LLM-assisted interpretive coding.
+The chapter studies how speakers in Dutch parliamentary debate use "Gouden Eeuw" language as a mnemonic trope. The workflow combines dictionary and embedding-assisted retrieval with human validation and LLM-assisted interpretive coding.
 
 ## Quick start
 
@@ -35,7 +35,7 @@ This default command uses only the included derived data. It regenerates:
 - `data/candidate/df_ge_high.csv`: 572 candidate speeches retrieved before final inclusion filtering.
 - `data/validation/human_o3_validation_44.csv`: human-vs-o3 validation set used by `scripts/02_validate_llm_coding.R`.
 - `data/validation/model_comparison_human_o3_gpt52.csv`: supplementary human/model comparison file from the model selection stage.
-- `prompts/annotation_prompt.txt`: exact annotation prompt/codebook used for LLM-assisted coding.
+- `Prompts/annotation_prompt.txt`: exact annotation prompt/codebook used for LLM-assisted coding.
 - `scripts/`: path-independent R scripts.
 - `R/`: shared helper functions.
 - `docs/`: methodology, data dictionary, codebook, and LLM-use disclosure.
@@ -88,3 +88,5 @@ The file `docs/llm_use_disclosure.md` documents LLM use following the GUIDE-LLM 
 ## Data note
 
 The final analytic file included here contains 447 speeches with a coded "Gouden Eeuw" trope. The candidate file contains 572 retrieved speeches before final inclusion filtering.
+
+The published CSV files include the [source-verified metadata corrections of 11 September 2026](docs/metadata_corrections.md). The final dataset contains 376 MP contributions, 70 government contributions and one visiting MEP contribution. Speech texts, inclusion decisions and analytical codes are unchanged. Party summaries have been regenerated from the corrected affiliations.

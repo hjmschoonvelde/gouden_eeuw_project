@@ -26,6 +26,8 @@ Candidate speeches were not automatically treated as trope uses. A speech was in
 
 The final analytic dataset included here, `data/derived/ge_final_45_24.csv`, contains 447 speeches that passed the inclusion rule and were assigned temporal-grammar and symbolic-work codes.
 
+A [source review in September 2026](metadata_corrections.md) corrected speaker, role and party metadata for ten contributions. The sample remains unchanged: 376 MP contributions, 70 government contributions and one visiting MEP contribution. Party breakdowns use the corrected affiliations; they do not imply that every contribution articulates a party position.
+
 ## Coding
 
 The coding scheme has two main tiers:
@@ -37,7 +39,7 @@ The codebook distinguishes four main temporal grammars: continuity, return, brea
 
 The symbolic-work layer distinguishes governing legitimation, competitive positioning, identity and boundary making, moral memory, and a residual SW5 category.
 
-See `docs/codebook.md` and `prompts/annotation_prompt.txt` for the operational definitions used in LLM-assisted coding.
+See `docs/codebook.md` and `Prompts/annotation_prompt.txt` for the operational definitions used in LLM-assisted coding.
 
 ## Human Validation And Model Selection
 

@@ -18,14 +18,14 @@ This disclosure follows the spirit of the GUIDE-LLM reporting framework in Feuer
 | Access mode | API access from R using the `ellmer` package. |
 | Context mode | The preserved batching script creates one chat object per batch and sends multiple speeches sequentially to that object. Depending on `ellmer` chat semantics, this may have allowed within-batch conversation context. No cross-batch or platform-level persistent memory was intended. |
 | Configuration | The preserved script sets `temperature = 0`, uses a batch size of 50, and allows retries/backoff for transient API errors. No random seed or maximum output-token value is recorded in the preserved script. |
-| Customisation | No fine-tuning. The model was customised only through the system prompt/codebook in `prompts/annotation_prompt.txt`. |
+| Customisation | No fine-tuning. The model was customised only through the system prompt/codebook in `Prompts/annotation_prompt.txt`. |
 | Persistent memory | No persistent memory feature was requested. See the context-mode note above for possible within-batch chat history. |
 
 ## Prompts
 
 | Reporting area | Project disclosure |
 |---|---|
-| Exact prompt | The exact prompt is included at `prompts/annotation_prompt.txt`. |
+| Exact prompt | The exact prompt is included at `Prompts/annotation_prompt.txt`. |
 | System-wide instructions | The prompt was supplied as the API system prompt through `ellmer::chat_openai(system_prompt = ...)`. No additional hidden project-level instructions are present in the repository. |
 
 ## Data Inputs And Privacy
@@ -50,7 +50,7 @@ This disclosure follows the spirit of the GUIDE-LLM reporting framework in Feuer
 | Reporting area | Project disclosure |
 |---|---|
 | Shared code | Reproduction scripts are in `scripts/`; shared helper functions are in `R/`. |
-| Shared prompt | The prompt/codebook is in `prompts/annotation_prompt.txt`. |
+| Shared prompt | The prompt/codebook is in `Prompts/annotation_prompt.txt`. |
 | Shared outputs | The final analytic dataset and validation files are included under `data/`. |
 | API reruns | API reruns require `OPENAI_API_KEY` and may not reproduce labels exactly because provider-side model versions and infrastructure can change. |
 | Default reproducibility | `Rscript scripts/run_all.R` reproduces derived-data tables, figures, and validation metrics without API calls or raw corpus files. |

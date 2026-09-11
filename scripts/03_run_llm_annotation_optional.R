@@ -39,7 +39,7 @@ limit <- as.integer(Sys.getenv("GE_ANNOTATION_LIMIT", unset = "0"))
 batch_sleep <- as.numeric(Sys.getenv("GE_ANNOTATION_SLEEP", unset = "0"))
 max_retries <- as.integer(Sys.getenv("GE_ANNOTATION_MAX_RETRIES", unset = "3"))
 
-system_prompt <- read_file(ge_path("prompts", "annotation_prompt.txt"))
+system_prompt <- read_file(ge_path("Prompts", "annotation_prompt.txt"))
 candidate_speeches <- read_csv(input_file, show_col_types = FALSE)
 check_columns(candidate_speeches, c("speech_id", "text"), basename(input_file))
 

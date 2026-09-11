@@ -1,6 +1,20 @@
 # Verification Notes
 
-Last checked in this workspace on 2026-06-16.
+## Metadata update, 2026-09-11
+
+```sh
+python3 tests/test_metadata_corrections.py --baseline 05c5f4e
+Rscript --vanilla scripts/run_all.R
+```
+
+The metadata checks and default reproduction passed. Comparison with the
+previous Git version confirmed that all original cells except the reviewed
+metadata, plus the documented new context columns, are preserved. Human/model
+validation files are unchanged. Only the party table and party figure changed
+among the reproduction outputs; the regenerated party figure was inspected.
+See the [metadata audit](metadata_corrections.md) for the sources and changes.
+
+## Earlier verification, 2026-06-16
 
 Checks performed:
 
