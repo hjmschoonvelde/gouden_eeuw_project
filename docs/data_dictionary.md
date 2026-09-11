@@ -9,7 +9,7 @@ Key columns:
 - `speech_id`: unique speech identifier.
 - `speaker`: speaker name, including source-verified metadata corrections.
 - `function.`: speaker function, with corrections documented in the metadata ledger.
-- `role`: speaking role: `mp` (Tweede Kamer member), `government`, or `mep` (visiting Member of the European Parliament). This describes the contribution at its date, not all offices held by the speaker.
+- `role`: speaking role: `mp` (Tweede Kamer member), `government`, `senator` (Eerste Kamer member), or `mep` (visiting Member of the European Parliament). This describes the contribution at its date, not all offices held by the speaker.
 - `party_ref`: party affiliation identifier, where recorded or verified. A missing party does not imply a government role. Affiliation does not necessarily identify the group on whose behalf a contribution is made; see the capacity and group fields.
 - `member_ref`: member identifier where available.
 - `text`: speech text as extracted from the corpus, retaining the original OCR and segmentation. See the metadata audit for the partially extracted 1950 Welter contribution.
@@ -43,7 +43,7 @@ Candidate speeches retrieved by dictionary/embedding-assisted search before fina
 
 This file is useful for inspecting retrieval coverage and understanding the candidate pool from which the final analytic dataset was produced.
 
-The same ten metadata corrections and two context columns are applied here. This file uses the column name `function` where the analytic file uses `function.`. Retrieval scores, texts and candidate membership are unchanged.
+The same eleven metadata corrections and two context columns are applied here. This file uses the column name `function` where the analytic file uses `function.`. Retrieval scores, texts and candidate membership are unchanged.
 
 ## `data/validation/human_o3_validation_44.csv`
 

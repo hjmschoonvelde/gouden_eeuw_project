@@ -17,8 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 LEDGER = json.loads((ROOT / "data/metadata/metadata_corrections.json").read_text())
 CORRECTIONS = {entry["speech_id"]: entry for entry in LEDGER["corrections"]}
 TARGETS = {
-    "data/derived/ge_final_45_24.csv": (447, 10),
-    "data/candidate/df_ge_high.csv": (572, 10),
+    "data/derived/ge_final_45_24.csv": (447, 11),
+    "data/candidate/df_ge_high.csv": (572, 11),
     "data/validation/df_ge_high_sample.csv": (58, 2),
 }
 CONTEXT = {"speaking_capacity", "parliamentary_group_as_recorded"}
@@ -34,7 +34,7 @@ def column_name(key, header):
 
 
 def run(baseline):
-    assert len(CORRECTIONS) == len(LEDGER["corrections"]) == 10
+    assert len(CORRECTIONS) == len(LEDGER["corrections"]) == 11
     for relative, (expected_rows, expected_matches) in TARGETS.items():
         header, rows = read_csv((ROOT / relative).read_bytes().decode("utf-8"))
         ids = [r["speech_id"] for r in rows]
@@ -55,7 +55,7 @@ def run(baseline):
             old_header, old_rows = read_csv(original)
             assert [r["speech_id"] for r in old_rows] == ids
             assert header[:len(old_header)] == old_header
-            expected_extra = CONTEXT if expected_matches == 10 else set()
+            expected_extra = CONTEXT if expected_matches == 11 else set()
             assert set(header) - set(old_header) == expected_extra
             for before, after in zip(old_rows, rows):
                 updates = CORRECTIONS.get(before["speech_id"], {}).get("updates", {})
@@ -65,7 +65,7 @@ def run(baseline):
         print(f"PASS: {relative}: {expected_rows} records, {expected_matches} reviewed corrections")
 
     _, final = read_csv((ROOT / "data/derived/ge_final_45_24.csv").read_bytes().decode("utf-8"))
-    assert Counter(r["role"] for r in final) == {"mp": 376, "government": 70, "mep": 1}
+    assert Counter(r["role"] for r in final) == {"mp": 375, "government": 70, "mep": 1, "senator": 1}
     assert all(r["party_ref"] not in ("", "NA") for r in final if r["role"] != "government")
     assert Counter(r["temporal_grammar_code"] for r in final) == {"TG1": 258, "TG2": 66, "TG3": 68, "TG4": 55}
     assert Counter(r["symbolic_work_code"] for r in final) == {"SW1": 287, "SW2": 88, "SW3": 33, "SW4": 35, "SW5": 4}

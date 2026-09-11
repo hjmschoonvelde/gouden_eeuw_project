@@ -89,4 +89,4 @@ The file `docs/llm_use_disclosure.md` documents LLM use following the GUIDE-LLM 
 
 The final analytic file included here contains 447 speeches with a coded "Gouden Eeuw" trope. The candidate file contains 572 retrieved speeches before final inclusion filtering.
 
-The published CSV files include the [source-verified metadata corrections of 11 September 2026](docs/metadata_corrections.md). The final dataset contains 376 MP contributions, 70 government contributions and one visiting MEP contribution. Speech texts, inclusion decisions and analytical codes are unchanged. Party summaries have been regenerated from the corrected affiliations.
+The published CSV files include the [source-verified metadata corrections of 11 September 2026](docs/metadata_corrections.md). The final dataset contains 375 Tweede Kamer MP contributions, 70 government contributions, one Eerste Kamer senator contribution and one visiting MEP contribution. Speech texts, inclusion decisions and analytical codes are unchanged. Party summaries have been regenerated from the corrected affiliations.

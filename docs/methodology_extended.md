@@ -2,7 +2,7 @@
 
 ## Corpus
 
-The analysis uses Dutch Tweede Kamer parliamentary speeches from 1945 to 2024. The historical part of the corpus was based on the parliamentary speech dataset assembled by Marx et al. for 1945-2012. The recent part was constructed from official parliamentary proceedings available through `zoek.officielebekendmakingen.nl` for 2013-2024. The combined corpus contains approximately 3 million speeches after harmonising the metadata fields used in the analysis.
+The analysis focuses on Dutch Tweede Kamer parliamentary speech from 1945 to 2024. The published 447-contribution sample also contains one Eerste Kamer speech, identified in the September 2026 metadata review and retained with an explicit `senator` role. The historical part of the corpus was based on the parliamentary speech dataset assembled by Marx et al. for 1945-2012. The recent part was constructed from official parliamentary proceedings available through `zoek.officielebekendmakingen.nl` for 2013-2024. The combined corpus contains approximately 3 million speeches after harmonising the metadata fields used in the analysis.
 
 The raw full corpus is not included in this GitHub-ready folder. The final analytic and validation files needed for the default reproduction scripts are included under `data/`.
 
@@ -26,7 +26,7 @@ Candidate speeches were not automatically treated as trope uses. A speech was in
 
 The final analytic dataset included here, `data/derived/ge_final_45_24.csv`, contains 447 speeches that passed the inclusion rule and were assigned temporal-grammar and symbolic-work codes.
 
-A [source review in September 2026](metadata_corrections.md) corrected speaker, role and party metadata for ten contributions. The sample remains unchanged: 376 MP contributions, 70 government contributions and one visiting MEP contribution. Party breakdowns use the corrected affiliations; they do not imply that every contribution articulates a party position.
+A [source review in September 2026](metadata_corrections.md) corrected speaker, role and party metadata for eleven contributions. The sample remains unchanged: 375 Tweede Kamer MP contributions, 70 government contributions, one Eerste Kamer senator contribution and one visiting MEP contribution. Party breakdowns use the corrected affiliations; they do not imply that every contribution articulates a party position.
 
 ## Coding
 
