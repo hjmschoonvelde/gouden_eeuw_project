@@ -7,7 +7,12 @@ Final analytic dataset used by the default reproduction scripts. It contains 447
 Key columns:
 
 - `speech_id`: unique speech identifier.
-- `speaker`: speaker name, including source-verified metadata corrections.
+- `speaker`: reviewed name identifying the speaker, consistent with the dashboard and Parlement.com registry.
+- `speaker_original`: original corpus speaker label before any metadata repairs.
+- `speaker_source_label`: corpus speaker label after the earlier OCR/attribution repairs, before expanding it to the reviewed name.
+- `speaker_person_id`: stable person identifier from the reviewed registry; use this to group contributions by person rather than by a shared surname or changing corpus member reference.
+- `speaker_profile_url`: reviewed Parlement.com biography link.
+- `sample_scope_note`: an explicit note for Jan Verbeek's Eerste Kamer contribution, retained provisionally despite the study's intended Tweede Kamer scope. Blank elsewhere; this does not replace the original coding notes or inclusion decision.
 - `function.`: speaker function, with corrections documented in the metadata ledger.
 - `role`: speaking role: `mp` (Tweede Kamer member), `government`, `senator` (Eerste Kamer member), or `mep` (visiting Member of the European Parliament). This describes the contribution at its date, not all offices held by the speaker.
 - `party_ref`: party affiliation identifier, where recorded or verified. A missing party does not imply a government role. Affiliation does not necessarily identify the group on whose behalf a contribution is made; see the capacity and group fields.
@@ -35,7 +40,7 @@ Key columns:
 - `speaking_capacity`: verified additional context where needed, such as speaking for a parliamentary committee. Blank means no additional context was added in this metadata review.
 - `parliamentary_group_as_recorded`: source group label where it needs to be distinguished from component-party affiliation (RPF/GPV for Van Middelkoop in 2000). Blank means no separate group label was added in this review.
 
-The CSV contains the corrected values directly. Original values, corrections and sources are recorded by speech ID in [`data/metadata/metadata_corrections.json`](../data/metadata/metadata_corrections.json), with a [human-readable audit](metadata_corrections.md). The original files remain available in Git history.
+The CSV contains the corrected values directly. Original values, corrections and sources are recorded by speech ID in [`data/metadata/metadata_corrections.json`](../data/metadata/metadata_corrections.json), with a [human-readable audit](metadata_corrections.md). The [speaker registry](../data/metadata/speaker_profiles.json) records the reviewed identities and links, with a [complete link inventory](speaker_links.md). The original files remain available in Git history.
 
 ## `data/candidate/df_ge_high.csv`
 
@@ -43,7 +48,7 @@ Candidate speeches retrieved by dictionary/embedding-assisted search before fina
 
 This file is useful for inspecting retrieval coverage and understanding the candidate pool from which the final analytic dataset was produced.
 
-The same eleven metadata corrections and two context columns are applied here. This file uses the column name `function` where the analytic file uses `function.`. Retrieval scores, texts and candidate membership are unchanged.
+The same eleven metadata corrections are applied here. Reviewed names and profile links are also copied to all 447 records that overlap the analytic sample. The remaining 125 records retain their existing names and have blank person/profile fields. Original and intermediate source labels are preserved for every row. This file uses the column name `function` where the analytic file uses `function.`. Retrieval scores, texts and candidate membership are unchanged.
 
 ## `data/validation/human_o3_validation_44.csv`
 
@@ -68,7 +73,7 @@ Supplementary model-comparison file from the model selection stage. It contains 
 
 Stratified sample drawn from the candidate set for qualitative coding and prompt/model development.
 
-Speaker, party and member metadata for the two overlapping reviewed records are corrected. The 58 sampled records, their texts and decade assignments are unchanged. Human/model labels in the separate validation and comparison files are unchanged.
+Speaker, party and member metadata for the two records in the initial correction ledger are corrected. The later name review supplies the same names and biography links for all 45 records that overlap the analytic sample; the remaining 13 keep their existing names and have blank person/profile fields. Original labels are preserved. The 58 sampled records, their texts and decade assignments are unchanged. Human/model labels in the separate validation and comparison files are unchanged.
 
 ## `Prompts/annotation_prompt.txt`
 

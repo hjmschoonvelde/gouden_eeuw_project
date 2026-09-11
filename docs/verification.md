@@ -19,6 +19,12 @@ The subsequent all-speaker biography review corrected Verbeek's 1984 role to
 and default reproduction pass with eleven reviewed corrections. No analytical
 output changes result from this additional role correction.
 
+The later name synchronization writes reviewed names and profile links into
+all 447 analytic records and matching candidate/validation-sample records.
+Original labels are preserved in separate columns. The preservation checks
+also verify these name assignments and Verbeek's provisional-retention note.
+All analytical outputs remain unchanged after this synchronization.
+
 ## Earlier verification, 2026-06-16
 
 Checks performed:

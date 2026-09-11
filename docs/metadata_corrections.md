@@ -2,7 +2,7 @@
 
 Reviewed and incorporated into the published CSV files on 11 September 2026.
 
-Ten contributions received corrections to speaker, role, party, member or
+The initial ten contributions received corrections to speaker, role, party, member or
 function metadata. The review began with nine records whose missing party
 values caused the earlier dashboard to display them as government speakers.
 These were six MP contributions, two ministerial contributions and one visiting
@@ -14,8 +14,10 @@ as government in June 2018, when he was an MP.
 The [machine-readable ledger](../data/metadata/metadata_corrections.json) contains
 exact speech IDs, original values, replacements, reasons and source locations.
 It is the same verified ledger used for the dashboard's metadata repair. Its
-biography information documents identity checks; this research repository has
-no separate biography dataset to replace.
+biography information documents identity checks. The additional
+[speaker registry](../data/metadata/speaker_profiles.json) supplies reviewed
+names and Parlement.com links for all 447 analytic contributions; see the
+[complete speaker-link audit](speaker_links.md).
 
 | Date | Original speaker label | Corrected identification and capacity | Party information | Parliamentary source |
 |---|---|---|---|---|
@@ -41,6 +43,14 @@ The older XML references in the ledger identify the research corpus files in
 the parent project's `Data/` directory; they are not bundled in this repository.
 The official scan URLs and printed-page references provide public source access.
 
+Jan Verbeek's 1 May 1984 speech is outside the intended Tweede Kamer scope.
+The original text itself retains Eerste Kamer page footers, independently of
+the biography match. It is retained provisionally in the 447-contribution
+sample at the researcher's request, pending a separate scope decision. This
+does not expand the intended scope of the study. The row-level
+`sample_scope_note` makes the exception visible without changing the original
+inclusion decision, coding or speech text.
+
 ## Published data and analytical consequences
 
 - `data/derived/ge_final_45_24.csv`: all eleven corrections are written directly into
@@ -50,10 +60,26 @@ The official scan URLs and printed-page references provide public source access.
   analytic dataset.
 - `data/validation/df_ge_high_sample.csv`: the two overlapping records, Welter
   (1949) and van Veenendaal-van Meggelen (1974), receive the same name, party and
-  member corrections. All 58 sampled records and their ordering are preserved.
+  member corrections. The later name review also supplies the verified names
+  and links for all 45 overlaps with the analytic sample. All 58 sampled records
+  and their ordering are preserved.
 - The human/model validation labels and model-comparison files are unchanged.
 
-The analytic and candidate files add two metadata columns: `speaking_capacity`
+The subsequent biography review writes the same full names into `speaker` in
+both repositories. It updates 422 labels in the analytic dataset and the same
+422 in the candidate pool, plus 41 labels in the validation sample. Most are
+surname expansions; the ten incorrect-person biography matches are documented
+separately in the speaker-link audit. All 447 analytic contributions carry a
+`speaker_person_id` and a `speaker_profile_url`. Matching records in the candidate
+and validation-sample files receive the same values. Unreviewed records retain
+their existing names and have blank identity/link fields.
+
+`speaker_original` preserves the original corpus name; `speaker_source_label`
+preserves the name after the earlier OCR/attribution corrections. The
+`sample_scope_note` documents Verbeek's provisional retention separately from
+the original model-generated notes and inclusion decision.
+
+The initial analytic and candidate repairs add two metadata columns: `speaking_capacity`
 and `parliamentary_group_as_recorded`. These preserve Van Middelkoop's committee
 role in 1996, the joint RPF/GPV group label in 2000, the two ministers' speaking
 capacity, Gerbrandy's participation as a visiting MEP, and Verbeek's
