@@ -2,8 +2,13 @@
 
 Reproduction and transparency materials for:
 
-**Golden Age Politics: A Computational-Interpretive Analysis of the "Gouden Eeuw" as a Trope in Dutch Parliamentary Speech, 1945-2024**  
-Stefan Couperus and Martijn Schoonvelde
+> Couperus, S., & Schoonvelde, M. (2026). Golden age politics: A
+> computational-interpretive analysis of the “Gouden Eeuw” as a trope in Dutch
+> parliamentary speech, 1945–2024. In K. Pettersson, K. Eriksson, & M. Menke
+> (Eds.), *Revived futures: The turn to the past in European politics*.
+> Palgrave Macmillan.
+
+The chapter is forthcoming in 2026.
 
 ## What This Project Does
 
